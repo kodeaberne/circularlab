@@ -1,13 +1,22 @@
 # Case Lab KEA
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8ca5dec9-7e67-4286-9fad-339942ae2f09/deploy-status)](https://app.netlify.com/sites/circularlab/deploys)
 
-## 💻 Installation på egen PC
+## 💻 Install on local PC
 
+**Clone project to local folder**
 ```sh
 git clone https://github.com/kodeaberne/circularlab.git
+```
+**Install dependencies**
+```sh
 npm install
 ```
+**Run dev server to see if Astro is working**
+```sh
+npm run dev
+```
 
+**Kør dev
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
