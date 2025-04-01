@@ -1,17 +1,12 @@
+# Case Lab KEA
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8ca5dec9-7e67-4286-9fad-339942ae2f09/deploy-status)](https://app.netlify.com/sites/circularlab/deploys)
-# Astro Starter Kit: Basics
+
+## 💻 Installation på egen PC
 
 ```sh
-npm create astro@latest -- --template basics
+git clone https://github.com/kodeaberne/circularlab.git
+npm install
 ```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
 
 ## 🚀 Project Structure
 
