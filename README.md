@@ -1,17 +1,40 @@
 # Case Lab KEA
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8ca5dec9-7e67-4286-9fad-339942ae2f09/deploy-status)](https://app.netlify.com/sites/circularlab/deploys)
 
 ## 💻 Install on local PC
 
 **Clone project to local folder**
+
 ```sh
 git clone https://github.com/kodeaberne/circularlab.git
 ```
+
 **Install dependencies**
+
 ```sh
 npm install
 ```
+
+**Create .env file in project root folder**
+
+```sh
+touch .env
+```
+
+**Add following content to .env**
+
+```
+SUPABASE_URL=YOUR_SUPABASE_URL
+SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
+```
+
+```
+
+```
+
 **Run dev server to see if Astro is working**
+
 ```sh
 npm run dev
 ```
