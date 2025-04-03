@@ -12,6 +12,8 @@ export const POST: APIRoute = async ({ request, redirect }) => {
     const eventend = formData.get('eventend');
     const descheader = formData.get('descheader');
     const description = formData.get('description');
+    const imglink = formData.get('imglink')
+    const ticketlink = formData.get('ticketlink')
     const { error } = await supabase.from('events').insert([
         {
             title: title,
@@ -19,7 +21,9 @@ export const POST: APIRoute = async ({ request, redirect }) => {
             eventstart: eventstart,
             eventend: eventend,
             descheader: descheader,
-            description: description
+            description: description,
+            imglink: imglink,
+            ticketlink: ticketlink
          },
     ]).select();
     if (error) {
