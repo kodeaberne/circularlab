@@ -40,14 +40,14 @@ const email = session.data.user?.email;
 
 const { data, error } = await supabase
 .from('events')
-.select('title');
+.select('title,eventdate');
 
 if (error) {
   console.log(error);
   throw error;
 }
 
-const titles = data.map((t) => t.title);
+const eventlist = data.map((t) => t);
 ---
 
 <Layout title='dashboard'>
@@ -85,7 +85,7 @@ const titles = data.map((t) => t.title);
 	<br />
 	<h2>Se events</h2>
   <ul>
-    { titles.map((titles:object) => <li> {titles}</li>) }
+    { eventlist.map((event) => <li> {event.title} {event.eventdate}</li>) }
   </ul>
 	<br />
 	<br />
