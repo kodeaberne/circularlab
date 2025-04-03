@@ -84,7 +84,9 @@ const titles = data.map((t) => t.title);
 	<br />
 	<br />
 	<h2>Se events</h2>
-  <h3>{ titles[1] }</h3>
+  <ul>
+    { titles.map((titles:object) => <li> {titles}</li>) }
+  </ul>
 	<br />
 	<br />
 	<form action='api/auth/signout'>
