@@ -7,7 +7,6 @@ export const prerender = false;
 const accessToken = Astro.cookies.get('sb-access-token');
 const refreshToken = Astro.cookies.get('sb-refresh-token');
 
-
 if (!accessToken || !refreshToken) {
 	return Astro.redirect('/signin');
 }
@@ -38,40 +37,67 @@ try {
 }
 
 const email = session.data.user?.email;
+
+const { data, error } = await supabase
+.from('events')
+.select('title,eventdate')
+.order('eventdate', { ascending: true });
+
+if (error) {
+  console.log(error);
+  throw error;
+}
+
+const eventlist = data.map((t) => t);
+
+const options = {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
 ---
 
 <Layout title='dashboard'>
 	<h1>Logged in as: {email}</h1>
-  <h2>Opret nyt event</h2>
+	<h2>Opret nyt event</h2>
 	<form action='api/insert/insert' method='post'>
-    <label for="title">Titel:</label>
-    <input type="text" name='title' id='title'>
-    <br>
-    <label for='eventdata'>Dato:</label>
-    <input type="date" name='eventdate' id='eventdate'>
-    <br>
-    <label for="eventstart">Starttid:</label>
-    <input type="time" name='eventstart' id='eventstart'>
-    <br>
-    <label for="eventend">Sluttid:</label>
-    <input type="time" name='eventend' id='eventend'>
-    <br>
-    <label for="descheader">Overskrift:</label>
-    <input type="text" name="descheader" id="descheader">
-    <br>
-    <label for="description">Beskrivelse:</label>
-    <input type="text" name="description" id="description">
-    <br>
-    <label for="imglink">Link til billede:</label>
-    <input type="url" name="imglink" id="imglink">
-    <br>
-    <label for="ticketlink">Link til billetsalg:</label>
-    <input type="url" name="ticketlink" id="ticketlink">
-    <br>
-    <br>
+		<label for='title'>Titel:</label>
+		<input type='text' name='title' id='title' />
+		<br />
+		<label for='eventdate'>Dato:</label>
+		<input type='date' name='eventdate' id='eventdate' />
+		<br />
+		<label for='eventstart'>Starttid:</label>
+		<input type='time' name='eventstart' id='eventstart' />
+		<br />
+		<label for='eventend'>Sluttid:</label>
+		<input type='time' name='eventend' id='eventend' />
+		<br />
+		<label for='descheader'>Overskrift:</label>
+		<input type='text' name='descheader' id='descheader' />
+		<br />
+		<label for='description'>Beskrivelse:</label>
+		<input type='text' name='description' id='description' />
+		<br />
+		<label for='imglink'>Link til billede:</label>
+		<input type='url' name='imglink' id='imglink' />
+		<br />
+		<label for='ticketlink'>Link til billetsalg:</label>
+		<input type='url' name='ticketlink' id='ticketlink' />
+		<br />
+		<br />
 		<button type='submit'>Opret event</button>
 	</form>
 	<br />
+	<br />
+	<h2>Se events</h2>
+    { eventlist.map((event) => 
+	<ul>
+		<li>{event.title}</li> 
+		<li>{new Date(event.eventdate).toLocaleDateString("da-DA", options)}</li>
+	</ul>
+	)}
 	<br />
 	<br />
 	<form action='api/auth/signout'>
