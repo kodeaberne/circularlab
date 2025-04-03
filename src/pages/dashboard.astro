@@ -42,10 +42,34 @@ const email = session.data.user?.email;
 
 <Layout title='dashboard'>
 	<h1>Logged in as: {email}</h1>
+  <h2>Opret nyt event</h2>
 	<form action='api/insert/insert' method='post'>
     <label for="title">Titel:</label>
     <input type="text" name='title' id='title'>
-		<button type='submit'>Test insert</button>
+    <br>
+    <label for='eventdata'>Dato:</label>
+    <input type="date" name='eventdate' id='eventdate'>
+    <br>
+    <label for="eventstart">Starttid:</label>
+    <input type="time" name='eventstart' id='eventstart'>
+    <br>
+    <label for="eventend">Sluttid:</label>
+    <input type="time" name='eventend' id='eventend'>
+    <br>
+    <label for="descheader">Overskrift:</label>
+    <input type="text" name="descheader" id="descheader">
+    <br>
+    <label for="description">Beskrivelse:</label>
+    <input type="text" name="description" id="description">
+    <br>
+    <label for="imglink">Link til billede:</label>
+    <input type="url" name="imglink" id="imglink">
+    <br>
+    <label for="ticketlink">Link til billetsalg:</label>
+    <input type="url" name="ticketlink" id="ticketlink">
+    <br>
+    <br>
+		<button type='submit'>Opret event</button>
 	</form>
 	<br />
 	<br />
