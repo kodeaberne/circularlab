@@ -40,7 +40,8 @@ const email = session.data.user?.email;
 
 const { data, error } = await supabase
 .from('events')
-.select('title,eventdate');
+.select('title,eventdate')
+.order('eventdate', { ascending: true });
 
 if (error) {
   console.log(error);
@@ -48,6 +49,13 @@ if (error) {
 }
 
 const eventlist = data.map((t) => t);
+
+const options = {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+};
 ---
 
 <Layout title='dashboard'>
@@ -84,9 +92,12 @@ const eventlist = data.map((t) => t);
 	<br />
 	<br />
 	<h2>Se events</h2>
-  <ul>
-    { eventlist.map((event) => <li> {event.title} {event.eventdate}</li>) }
-  </ul>
+    { eventlist.map((event) => 
+	<ul>
+		<li>{event.title}</li> 
+		<li>{new Date(event.eventdate).toLocaleDateString("da-DA", options)}</li>
+	</ul>
+	)}
 	<br />
 	<br />
 	<form action='api/auth/signout'>
