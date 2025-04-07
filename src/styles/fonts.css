@@ -1,0 +1,34 @@
+@font-face {
+    font-family: DMMono;
+    src: url("../fonts/DMMono-Regular.ttf");
+}
+
+@font-face {
+    font-family: HelveticaBold;
+    src: url("../fonts/HelveticaNeueBold.otf");
+}
+
+@font-face {
+    font-family: HelveticaRoman;
+    src: url("../fonts/HelveticaNeueRoman.otf");
+}
+
+h1 {
+    font-family: "HelveticaBold";
+    font-size: 3rem;
+}
+
+h2 {
+    font-family: "HelveticaBold";
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-family: "HeveticaBold";
+    font-size: 1.1rem;
+}
+
+p {
+    font-family: "HelveticaRoman";
+    font-size: 1rem;
+}
