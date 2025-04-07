@@ -1,4 +1,7 @@
 ---
+import "../styles/color.css"
+import "../styles/fonts.css"
+
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
@@ -15,7 +18,9 @@ const title = Astro.props;
 	</head>
 	<body>
 		<Header />
-		<slot />
+		<main>
+			<slot />
+		</main>
 		<Footer />
 	</body>
 </html>
@@ -33,10 +38,14 @@ const title = Astro.props;
 		display: block;
 	}
 
-  body {
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
+	body {
+		width: 100vw;
+		margin: 0;
+		padding: 0;
+		overflow-x: hidden;
+	}
+
+	main {
+		margin-top: 7.5vh;
+	}
 </style>
