@@ -1,0 +1,12 @@
+*:root {
+    --green: #536447;
+    --black: #000000;
+    --white: #FFFFFF;
+    --orange: #FF671F;
+    --grey: #9F9F9F;
+    --blue: #013B5C;
+    --darkgrey: #333333;
+
+    --fg: var(--darkgrey);
+    --fg-alt: var(--orange)
+}
