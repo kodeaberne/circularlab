@@ -1,0 +1,55 @@
+---
+import { Image } from 'astro:assets';
+import Logo from '../images/logo.png';
+import Bookmark from '../images/bookmark.svg';
+---
+
+<header>
+	<div class='menuIcon'>
+		<div class='line'></div>
+		<div class='line'></div>
+		<div class='line'></div>
+	</div>
+	<Image src={Logo} alt='Logo' class='logo'/>
+	<Image src={Bookmark} alt='My events icon' class='bookmarkIcon' />
+</header>
+
+<style>
+	header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 7.5vh;
+		padding-left: 5vw;
+		padding-right: 5vw;
+		border-bottom: 1px solid black;
+		overflow-x: hidden;
+	}
+
+	.menuIcon {
+		display: flex;
+		flex-direction: column;
+		gap: 3px;
+	}
+
+	.line:nth-child(2) {
+		width: 30px;
+	}
+
+	.line {
+		background-color: black;
+		width: 40px;
+		height: 1.5px;
+		margin: 2.5px 0px 2.5px 0px;
+	}
+
+    .logo {
+        width: 150px;
+        height: auto;
+    }
+
+	.bookmarkIcon {
+		width: 30px;
+		height: 40px;
+	}
+</style>
