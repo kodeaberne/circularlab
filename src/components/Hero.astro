@@ -1,0 +1,50 @@
+---
+import '../images/hero.png';
+---
+
+<section class='heroContainer'>
+	<div class='pillButton'>
+		<h3>Hvem er vi?</h3>
+	</div>
+</section>
+
+<style>
+	.heroContainer {
+		height: 70vh;
+		width: 100vw;
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		grid-template-rows: repeat(12, 1fr);
+		background-image: url('../images/hero.png');
+	}
+
+	.pillButton {
+		display: flex;
+		grid-column: 3 / span 8;
+		grid-row: 11;
+		background: rgba(0, 0, 0, 0.461);
+		border-radius: 30px;
+		width: 90%;
+		justify-self: center;
+		justify-content: center;
+		align-items: center;
+	}
+	.pillButton h3 {
+		text-transform: uppercase;
+		letter-spacing: 3px;
+		text-align: center;
+		font-family: 'HelveticaRoman';
+		color: var(--white);
+	}
+
+	@media (min-width: 800px) {
+		.heroContainer {
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		.pillButton {
+			width: 30%;
+		}
+	}
+</style>
