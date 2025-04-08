@@ -16,20 +16,25 @@ import Bookmark from '../images/bookmark.svg';
 
 <style>
 	header {
+		position: fixed;
+		top: 0;
+		left: 0;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		height: 7.5vh;
-		padding-left: 5vw;
-		padding-right: 5vw;
-		border-bottom: 1px solid black;
+		width: 100vw;
+		border-bottom: 1px solid var(--black);
 		overflow-x: hidden;
+		z-index: 1;
+		background-color: var(--white);
 	}
 
 	.menuIcon {
 		display: flex;
 		flex-direction: column;
 		gap: 3px;
+		margin-left: 10px;
 	}
 
 	.line:nth-child(2) {
@@ -37,7 +42,7 @@ import Bookmark from '../images/bookmark.svg';
 	}
 
 	.line {
-		background-color: black;
+		background-color: var(--black);
 		width: 40px;
 		height: 1.5px;
 		margin: 2.5px 0px 2.5px 0px;
@@ -51,5 +56,6 @@ import Bookmark from '../images/bookmark.svg';
 	.bookmarkIcon {
 		width: 30px;
 		height: 40px;
+		margin-right: 10px;
 	}
 </style>
