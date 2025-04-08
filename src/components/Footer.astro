@@ -1,23 +1,23 @@
 ---
-import { Image } from "astro:assets"
-import about from "../images/about.svg"
-import contact from "../images/contact.svg"
-import info from "../images/info.svg"
+import { Image } from 'astro:assets';
+import about from '../images/about.svg';
+import contact from '../images/contact.svg';
+import info from '../images/info.svg';
 ---
 
 <footer>
 	<section class='footerTop'>
 		<div class='footerContent about'>
 			<h3>Om os</h3>
-            <Image src={ about } alt='about icon'></Image>
+			<Image src={about} alt='about icon' />
 		</div>
 		<div class='footerContent contact'>
 			<h3>Kontakt</h3>
-            <Image src={ contact } alt="contact icon"></Image>
+			<Image src={contact} alt='contact icon' />
 		</div>
 		<div class='footerContent info'>
 			<h3>Praktisk info</h3>
-            <Image src={ info } alt="info icon"></Image>
+			<Image src={info} alt='info icon' />
 		</div>
 	</section>
 	<section class='footerBottom'>
@@ -31,6 +31,7 @@ import info from "../images/info.svg"
 		width: 100%;
 		display: flex;
 		flex-direction: column;
+		border-top: 1px solid var(--darkgrey);
 	}
 
 	.footerTop {
@@ -38,12 +39,13 @@ import info from "../images/info.svg"
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
+        padding-top: 40px;
 	}
 
 	.footerContent {
 		display: flex;
 		flex-direction: column;
-        align-items: center;
+		align-items: center;
 	}
 	.footerBottom {
 		display: flex;
@@ -62,9 +64,17 @@ import info from "../images/info.svg"
 		font-size: 0.65rem;
 	}
 
-    @media (min-width: 800px) {
-        footer {
-            height: 300px;
+	@media (min-width: 800px) {
+		footer {
+			height: 300px;
+		}
+
+        .footerTop {
+            padding-left: 25%;
+            padding-right: 25%;
         }
-    }
+		.footerBottom p {
+			font-size: 1rem;
+		}
+	}
 </style>
