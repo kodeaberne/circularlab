@@ -1,0 +1,160 @@
+---
+import circleArrow from '../images/circlearrow.svg';
+import forest from '../images/forest.png';
+import dateOne from '../images/1.svg';
+import dateTwo from '../images/2.svg';
+
+import Image from 'astro/components/Image.astro';
+---
+
+<section>
+	<h1>Circular Lab</h1>
+	<p>
+		Circular Lab er et community lab med fokus på cirkulære
+		forretningsmodeller, strategier og design. Circular Lab er for KEAs
+		studerende, undervisere og medlemmer af samarbejdende institutioner.
+		Circular Lab samarbejder på tværs af de andre labs på KEA.
+	</p>
+	<Image src={circleArrow} alt='cirlce of arrows' />
+	<p>
+		Circular Lab er et multifunktionelt rum, der indbyder til at udforske og
+		undersøge nye cirkulære forretningsmodeller og hvordan vi designer
+		cirkulære produkter. Gennem workshops, foredrag, community caféer og
+		virksomhedsbesøg åbner vi op for mulighederne der følger med den
+		cirkulære omstilling og hvordan man kan udforske dem igennem praksis og
+		teori.
+	</p>
+	<Image src={forest} alt='image of forest' id='forest' />
+	<div class='textBoxContainer'>
+		<div class='secondContainer'>
+			<Image src={dateOne} alt='decoration' class='dateWrapper' />
+			<div class='textBox'>
+				<h2>Adgang til Værktøjer</h2>
+				<p>
+					Få adgang til en række værktøjer og ressourcer i vores
+					laboratorium til støtte for udviklingen af bæredygtige
+					designløsninger.
+				</p>
+			</div>
+		</div>
+		<div class='secondContainer'>
+			<Image src={dateTwo} alt='decoration' class='dateWrapper' />
+			<div class='textBox'>
+				<h2>Interaktive Workshops</h2>
+				<p>
+					Deltag i praktiske workshops for at udvikle færdigheder og
+					innovative løsninger.
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	section {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-wrap: pretty;
+		margin-left: 5vw;
+		margin-right: 5vw;
+	}
+
+	h1 {
+		font-family: 'HelveticaBold';
+		text-transform: uppercase;
+		text-align: center;
+		word-wrap: break-word;
+	}
+
+	p {
+		font-family: 'HelveticaRoman';
+		padding-bottom: 50px;
+	}
+
+	img {
+		margin-bottom: 50px;
+	}
+
+	div {
+		margin-top: 50px;
+	}
+
+	.dateWrapper {
+		transform: translateX(15vw);
+	}
+
+	.textBox {
+		background-color: var(--lightestgrey);
+		border-radius: 20px;
+		margin-top: -40px;
+		padding: 10px 10px 10px 20px;
+		margin-bottom: 40px;
+	}
+
+	.textBox p {
+		opacity: 0.5;
+	}
+
+	@media (min-width: 800px) {
+		section {
+			margin-left: 0;
+			margin-right: 0;
+            padding-bottom: 250px;
+		}
+
+		p {
+			margin-left: 25vw;
+			margin-right: 25vw;
+		}
+
+		img {
+			width: 150px;
+			height: auto;
+		}
+
+		#forest {
+			width: 1200px;
+			height: auto;
+		}
+
+		.textBoxContainer {
+			display: flex;
+			flex-direction: row;
+            justify-content: center;
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+		}
+
+        .secondContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+        }
+
+        .secondContainer img {
+            width: 100%;
+            height: 150px;
+        }
+
+        .textBox {
+            margin: 0px;
+            padding: 10px 10px 10px 20px;
+            height: 200px;
+            width: 80%;
+        }
+
+        .textBox p {
+            margin: 0px;
+        }
+
+        .dateWrapper {
+            transform: none;
+        }
+
+	}
+</style>

@@ -7,6 +7,7 @@
     --blue: #013B5C;
     --darkgrey: #333333;
     --lightgrey: #1e1e1e29;
+    --lightestgrey: #F8F8F8;
 
     --fg: var(--darkgrey);
     --fg-alt: var(--orange)
