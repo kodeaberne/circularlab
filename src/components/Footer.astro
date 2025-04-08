@@ -1,0 +1,70 @@
+---
+import { Image } from "astro:assets"
+import about from "../images/about.svg"
+import contact from "../images/contact.svg"
+import info from "../images/info.svg"
+---
+
+<footer>
+	<section class='footerTop'>
+		<div class='footerContent about'>
+			<h3>Om os</h3>
+            <Image src={ about } alt='about icon'></Image>
+		</div>
+		<div class='footerContent contact'>
+			<h3>Kontakt</h3>
+            <Image src={ contact } alt="contact icon"></Image>
+		</div>
+		<div class='footerContent info'>
+			<h3>Praktisk info</h3>
+            <Image src={ info } alt="info icon"></Image>
+		</div>
+	</section>
+	<section class='footerBottom'>
+		<p>Guldbergsgade 29N, Lokale A129. Mandag-fredag: 08:30 - 22:00</p>
+	</section>
+</footer>
+
+<style>
+	footer {
+		height: 10rem;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.footerTop {
+		height: 75%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+
+	.footerContent {
+		display: flex;
+		flex-direction: column;
+        align-items: center;
+	}
+	.footerBottom {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		background-color: var(--green);
+		height: 25%;
+	}
+
+	h3 {
+		font-family: 'HelveticaBold';
+	}
+	.footerBottom p {
+		color: var(--white);
+		font-family: DMMono;
+		font-size: 0.65rem;
+	}
+
+    @media (min-width: 800px) {
+        footer {
+            height: 300px;
+        }
+    }
+</style>
