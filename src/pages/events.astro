@@ -1,14 +1,41 @@
 ---
+import { supabase } from '../lib/supabase';
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Card from "../components/Card.astro"
+
+export const prerender = false;
+
+const { data, error } = await supabase
+	.from('events')
+	.select('id,title,eventdate,imglink')
+	.order('eventdate', { ascending: true });
+
+if (error) {
+	console.log(error);
+	throw error;
+}
+
+const eventlist = data.map((t) => t);
+
+const options = {
+	year: 'numeric',
+	month: 'numeric',
+	day: 'numeric',
+};
 ---
-<BaseLayout title='Event Kalendar'>
-    <h1>Event Kalender</h1>
+<BaseLayout title='Cirkular Lab: Begivenheder'>
+    <h1>Begivenheder</h1>
     <section>
-        <Card eventTitle='Test' eventImage='/repair.png' eventDate='01-01-1990'>
-        </Card>
-        <Card eventTitle='Test' eventImage='/repair.png' eventDate='01-01-1990'>
-        </Card>
+        {
+			eventlist.map((event) => (
+				<Card eventTitle={event.title} eventImage='/repair.png' eventDate=`${new Date(event.eventdate).toLocaleDateString(
+                            'da-DA',
+							options
+						)}`>
+				
+                </Card>
+			))
+		}
     </section>
 </BaseLayout>
 
@@ -23,6 +50,9 @@ import Card from "../components/Card.astro"
         padding-right: 5vw;
     }
 
+    h1 {
+        text-align: center;
+    }
     @media (min-width: 800px) {
         section {
             width: 100vw;
