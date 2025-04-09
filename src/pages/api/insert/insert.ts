@@ -7,6 +7,7 @@ export const prerender = false;
 export const POST: APIRoute = async ({ request, redirect }) => {
     const formData = await request.formData();
     const title = formData.get('title');
+    const eventtype = formData.get('eventtype');
     const eventdate = formData.get('eventdate');
     const eventstart = formData.get('eventstart');
     const eventend = formData.get('eventend');
@@ -17,6 +18,7 @@ export const POST: APIRoute = async ({ request, redirect }) => {
     const { error } = await supabase.from('events').insert([
         {
             title: title,
+            eventtype: eventtype,
             eventdate: eventdate,
             eventstart: eventstart,
             eventend: eventend,
