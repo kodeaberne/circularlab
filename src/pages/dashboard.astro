@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import { supabase } from '../lib/supabase';
 
+import '../styles/fonts.css';
+import '../styles/color.css';
+
 export const prerender = false;
 
 const accessToken = Astro.cookies.get('sb-access-token');
@@ -39,68 +42,121 @@ try {
 const email = session.data.user?.email;
 
 const { data, error } = await supabase
-.from('events')
-.select('title,eventdate')
-.order('eventdate', { ascending: true });
+	.from('events')
+	.select('title,eventdate')
+	.order('eventdate', { ascending: true });
 
 if (error) {
-  console.log(error);
-  throw error;
+	console.log(error);
+	throw error;
 }
 
 const eventlist = data.map((t) => t);
 
 const options = {
-  weekday: "long",
-  year: "numeric",
-  month: "long",
-  day: "numeric",
+	weekday: 'long',
+	year: 'numeric',
+	month: 'long',
+	day: 'numeric',
 };
 ---
 
 <Layout title='dashboard'>
-	<h1>Logged in as: {email}</h1>
-	<h2>Opret nyt event</h2>
-	<form action='api/insert/insert' method='post'>
-		<label for='title'>Titel:</label>
-		<input type='text' name='title' id='title' />
+	<h1>Circular Lab Admin Dashboard</h1>
+
+	<section>
+		<h2>Logged in as: {email}</h2>
+		<form action='api/auth/signout' class='signout'>
+			<button type='submit'>Sign out</button>
+		</form>
+		<h2>Opret nyt event</h2>
+		<form action='api/insert/insert' method='post'>
+			<label for='title'>Titel:</label>
+			<input type='text' name='title' id='title' />
+			<br />
+			<br />
+			<label for='eventtype'>Event type:</label>
+			<select name='eventtype' id='eventtype'>
+				<option value=''>Vælg en type:</option>
+				<option value='workshops'>Workshops</option>
+				<option value='foredrag'>Foredrag</option>
+				<option value='cafeer'>Cafeer</option>
+			</select>
+			<br />
+			<br />
+			<label for='eventdate'>Dato:</label>
+			<input type='date' name='eventdate' id='eventdate' />
+			<br />
+			<br />
+			<label for='eventstart'>Starttid:</label>
+			<input type='time' name='eventstart' id='eventstart' />
+			<br />
+			<br />
+			<label for='eventend'>Sluttid:</label>
+			<input type='time' name='eventend' id='eventend' />
+			<br />
+			<br />
+			<label for='descheader'>Overskrift:</label>
+			<input type='text' name='descheader' id='descheader' />
+			<br />
+			<br />
+			<label for='description'>Beskrivelse:</label>
+			<br />
+			<textarea name='description' id='description'></textarea>
+			<br />
+			<br />
+			<label for='imglink'>Link til billede:</label>
+			<input type='url' name='imglink' id='imglink' />
+			<br />
+			<br />
+			<label for='ticketlink'>Link til billetsalg:</label>
+			<input type='url' name='ticketlink' id='ticketlink' />
+			<br />
+			<br />
+			<button type='submit'>Opret event</button>
+		</form>
 		<br />
-		<label for='eventdate'>Dato:</label>
-		<input type='date' name='eventdate' id='eventdate' />
 		<br />
-		<label for='eventstart'>Starttid:</label>
-		<input type='time' name='eventstart' id='eventstart' />
-		<br />
-		<label for='eventend'>Sluttid:</label>
-		<input type='time' name='eventend' id='eventend' />
-		<br />
-		<label for='descheader'>Overskrift:</label>
-		<input type='text' name='descheader' id='descheader' />
-		<br />
-		<label for='description'>Beskrivelse:</label>
-		<input type='text' name='description' id='description' />
-		<br />
-		<label for='imglink'>Link til billede:</label>
-		<input type='url' name='imglink' id='imglink' />
-		<br />
-		<label for='ticketlink'>Link til billetsalg:</label>
-		<input type='url' name='ticketlink' id='ticketlink' />
-		<br />
-		<br />
-		<button type='submit'>Opret event</button>
-	</form>
-	<br />
-	<br />
-	<h2>Se events</h2>
-    { eventlist.map((event) => 
-	<ul>
-		<li>{event.title}</li> 
-		<li>{new Date(event.eventdate).toLocaleDateString("da-DA", options)}</li>
-	</ul>
-	)}
-	<br />
-	<br />
-	<form action='api/auth/signout'>
-		<button type='submit'>Sign out</button>
-	</form>
+		<h2>Kommende events</h2>
+		{
+			eventlist.map((event) => (
+				<ul>
+					<li>{event.title}</li>
+					<li>
+						{new Date(event.eventdate).toLocaleDateString(
+							'da-DA',
+							options
+						)}
+					</li>
+				</ul>
+			))
+		}
+	</section>
 </Layout>
+
+<style>
+	h1 {
+		text-align: center;
+	}
+
+	.signout {
+		text-align: center;
+	}
+	section {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		font-family: 'HelveticaRoman';
+		border: 3px solid var(--black);
+		margin: 10% 20% 0 20%;
+		padding: 0 150px 150px 150px;
+		background-color: var(--white);
+	}
+
+	#description {
+		field-sizing: content;
+		min-width: 350px;
+		min-height: 200px;
+	}
+</style>
