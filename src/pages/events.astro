@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro"
+---
+<BaseLayout title='Event Kalendar'>
+    <h1>Event Kalender</h1>
+    <section>
+        <Card eventTitle='Test' eventImage='/repair.png' eventDate='01-01-1990'>
+        </Card>
+        <Card eventTitle='Test' eventImage='/repair.png' eventDate='01-01-1990'>
+        </Card>
+    </section>
+</BaseLayout>
+
+<style>
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90vw;
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    @media (min-width: 800px) {
+        section {
+            width: 100vw;
+            padding: 0;
+        }
+    }
+</style>
