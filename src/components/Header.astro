@@ -2,17 +2,60 @@
 import { Image } from 'astro:assets';
 import Logo from '../images/logo.png';
 import Bookmark from '../images/bookmark.svg';
+import Contact from '../images/contact.svg';
+import Location from '../images/location.svg';
+import Instagram from '../images/instagram.svg'
 ---
 
-<header>
+<header id='navbar'>
 	<div class='menuIcon'>
 		<div class='line'></div>
 		<div class='line'></div>
 		<div class='line'></div>
 	</div>
-	<Image src={Logo} alt='Logo' class='logo'/>
+	<Image src={Logo} alt='Logo' class='logo' />
 	<Image src={Bookmark} alt='My events icon' class='bookmarkIcon' />
 </header>
+<nav>
+	<div class='menu'>
+		<ul>
+			<li>
+				<a href='index.html'>Forside</a>
+			</li>
+			<li><a href='events.html'>Events</a></li>
+			<li><a href='index.html#about'>Om Circular Lab</a></li>
+		</ul>
+
+		<div class='contact'>
+			<ul>
+				<li><h3>Kontakt</h3></li>
+				<li>
+					<a href='mailto:circular@kea.dk'
+						><Image
+							src={Contact}
+							alt='contact icon'
+						/>circular@kea.dk</a
+					>
+				</li>
+				<li>
+					<a
+						href='https://www.google.com/maps/dir/55.6590647,12.5902241/Guldbergsgade+29N,+2200+K'
+						><Image
+							src={Location}
+							alt='location icon'
+						/>Guldbergsgade 29N, Lokale A129</a
+					>
+				</li>
+				<li>
+					<a href="http://instagram.com">
+						<Image src={Instagram} alt='instagram icon'></Image>
+						@kea_circularlab
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
 
 <style>
 	header {
@@ -47,14 +90,93 @@ import Bookmark from '../images/bookmark.svg';
 		margin: 2.5px 0px 2.5px 0px;
 	}
 
-    .logo {
-        width: 150px;
-        height: auto;
-    }
+	.logo {
+		width: 150px;
+		height: auto;
+	}
 
 	.bookmarkIcon {
 		width: 30px;
 		height: 40px;
 		margin-right: 30px;
+	}
+
+	.menu {
+		top: 7.5vh;
+		width: 100vw;
+		left: 0;
+		position: fixed;
+		height: 0vh;
+		transition: ease-in 1s;
+		z-index: 1000;
+		background: var(--white);
+		opacity: 0;
+		pointer-events: none;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		align-items: start;
+	}
+
+	.menu.active {
+		opacity: 1;
+		height: 92.5vh;
+		transition: ease-out 1s;
+		pointer-events: all;
+	}
+
+	.menu ul {
+		margin-top: 100px;
+	}
+	.menu li {
+		list-style-type: none;
+		font-family: 'HelveticaRoman';
+		font-size: 1.5rem;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+		margin: 5vh 0 5vh 0;
+	}
+
+	.menu a {
+		text-decoration: none;
+		color: var(--black);
+	}
+
+	.menu a:visited {
+		color: var(--black);
+	}
+
+	.menu a:hover {
+		color: var(--lightgrey);
+		transition: 0.5s color;
+	}
+
+	.no_scroll {
+		overflow: hidden;
+	}
+	.contact {
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		align-items: start;
+		margin-top: -100px;
+	}
+
+	.contact h3 {
+		font-family: HelveticaRoman;
+		text-transform: uppercase;
+
+	}
+
+	.contact li {
+		font-size: 1rem;
+		text-transform: none;
+		letter-spacing: 3px;
+	}
+
+	.contact img {
+		transform: translateY(7.5px);
+		margin-right: 5px;
 	}
 </style>
