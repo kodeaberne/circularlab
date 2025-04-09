@@ -1,0 +1,77 @@
+---
+import { Image } from "astro:assets"
+
+import uv1 from '../images/uv1.png'
+import uv2 from '../images/uv2.png'
+import uv3 from '../images/uv3.svg'
+---
+
+<section>
+	<h1>Udvikling</h1>
+	<p>
+		Laboratoriet giver dig mulighed for at styrke dine kompetencer og udvide
+		dit netværk, så du står stærkere på arbejdsmarkedet.
+	</p>
+    <div class='container'>
+        <div>
+            <Image src={uv1} alt='icon'></Image>
+            <p>✔ Styrke dine færdigheder gennem praktiske projekter.</p>
+        </div>
+        <div>
+            <Image src={uv2} alt='icon'></Image>
+            <p>✔ Udvikle innovative løsninger med fokus på bæredygtighed.</p>
+        </div>
+        <div>
+            <Image src={uv3} alt='icon'></Image>
+            <p>✔ Opbygge et netværk, der kan åbne døre for din karriere.</p>
+        </div>
+    </div>
+</section>
+
+<style>
+	section {
+		width: 90%;
+		margin-left: 5%;
+		margin-right: 5%;
+		border-top: 1px solid var(--lightgrey);
+	}
+
+	h1 {
+		text-transform: uppercase;
+		color: var(--orange);
+		text-align: center;
+	}
+
+    section p {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .container div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 40%;
+    }
+
+    .container div img {
+        width: 50px;
+        height: auto;
+    }
+
+    @media (min-width: 800px) {
+        .container div img {
+            width: 100px;
+        }
+    }
+</style>
