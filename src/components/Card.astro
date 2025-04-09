@@ -5,14 +5,22 @@ import '../styles/fonts.css';
 const { eventTitle } = Astro.props;
 const { eventImage } = Astro.props;
 const { eventDate } = Astro.props;
+const { eventLink } = Astro.props;
 ---
 
-<div class='card' style=`background-image: url(${ eventImage })`>
-	<h2>{eventTitle}</h2>
-</div>
+<a href=`/single.html?id=${eventLink}`>
+	<div class='card' style=`background-image: url(${ eventImage })`>
+		<h2>{eventTitle}</h2>
+	</div>
+</a>
 <h3>{eventDate}</h3>
 
 <style>
+
+	a {
+		height: 250px;
+		width: 100%;
+	}
 	.card {
 		display: flex;
 		flex-direction: column;
@@ -30,7 +38,7 @@ const { eventDate } = Astro.props;
 		padding-left: 25px;
 		text-transform: uppercase;
 		place-self: start end;
-        letter-spacing: 0.625rem;
+		letter-spacing: 0.625rem;
 	}
 
 	.card::before {
@@ -50,26 +58,30 @@ const { eventDate } = Astro.props;
 	}
 
 	h3 {
-        letter-spacing: 0.25rem;
+		letter-spacing: 0.25rem;
 		margin-left: auto;
-        margin-bottom: 50px;
-        font-family: "HelveticaRoman";
-        color: var(--lightgrey);
+		margin-bottom: 50px;
+		font-family: 'HelveticaRoman';
+		color: var(--lightgrey);
 	}
 
-    @media (min-width: 800px) {
-        .card {
-            height: 800px;
-        }
+	@media (min-width: 800px) {
 
-        .card h2 {
-            padding-top: 650px;
-            font-size: 3rem;
-        }
+		a {
+			height: 800px;
+		}
+		.card {
+			height: 800px;
+		}
 
-        h3 {
-            font-size: 2rem;
-            margin-right: 50px;
-        }
-    }
+		.card h2 {
+			padding-top: 650px;
+			font-size: 3rem;
+		}
+
+		h3 {
+			font-size: 2rem;
+			margin-right: 50px;
+		}
+	}
 </style>
