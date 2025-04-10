@@ -8,7 +8,7 @@ const { eventDate } = Astro.props;
 const { eventLink } = Astro.props;
 ---
 
-<a href=`/single.html?id=${eventLink}`>
+<a href=`/single?id=${eventLink}`>
 	<div class='card' style=`background-image: url(${ eventImage })`>
 		<h2>{eventTitle}</h2>
 	</div>
