@@ -2,6 +2,7 @@
 import { supabase } from '../lib/supabase';
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Card from "../components/Card.astro"
+import Button from '../components/Button.astro'
 
 export const prerender = false;
 
@@ -25,6 +26,11 @@ const options = {
 ---
 <BaseLayout title='Cirkular Lab: Begivenheder'>
     <h1>Begivenheder</h1>
+    <div class='buttonRow'>
+        <Button text='Foredrag'></Button>
+        <Button text='Workshop'></Button>
+        <Button text='Café'></Button>
+    </div>
     <section>
         {
 			eventlist.map((event) => (
@@ -49,9 +55,12 @@ const options = {
         padding-left: 5vw;
         padding-right: 5vw;
     }
-
     h1 {
         text-align: center;
+    }
+
+    .buttonRow {
+        display: none;
     }
     @media (min-width: 800px) {
         section {
@@ -63,6 +72,16 @@ const options = {
             gap: 2rem;
             align-items: start;
             justify-content: start;
+        }
+
+        .buttonRow {
+            display: flex;
+            flex-direction: row;
+            margin: auto;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
         }
     }
 </style>
