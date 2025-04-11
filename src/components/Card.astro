@@ -12,14 +12,17 @@ const { eventLink } = Astro.props;
 	<div class='card' style=`background-image: url(${ eventImage })`>
 		<h2>{eventTitle}</h2>
 	</div>
+	<h3>{eventDate}</h3>
 </a>
-<h3>{eventDate}</h3>
+
 
 <style>
 
 	a {
 		height: 250px;
 		width: 100%;
+		margin-bottom: 3rem;
+		text-decoration: none;
 	}
 	.card {
 		display: flex;
@@ -34,8 +37,8 @@ const { eventLink } = Astro.props;
 		position: absolute;
 		color: var(--white);
 		z-index: 10;
-		padding-top: 170px;
-		padding-left: 25px;
+		padding-top: 11rem;
+		padding-left: 1.5rem;
 		text-transform: uppercase;
 		place-self: start end;
 		letter-spacing: 0.625rem;
@@ -60,7 +63,8 @@ const { eventLink } = Astro.props;
 	h3 {
 		letter-spacing: 0.25rem;
 		margin-left: auto;
-		margin-bottom: 50px;
+		text-align: right;
+		margin-bottom: 3rem;
 		font-family: 'HelveticaRoman';
 		color: var(--lightgrey);
 	}
@@ -68,20 +72,22 @@ const { eventLink } = Astro.props;
 	@media (min-width: 800px) {
 
 		a {
-			height: 800px;
+			height: 30rem;
+			width: 23rem;
+
 		}
 		.card {
-			height: 800px;
+			height: 30rem;
+			width: 23rem;
 		}
 
 		.card h2 {
-			padding-top: 650px;
-			font-size: 3rem;
+			padding-top: 26rem;
+			font-size: 1rem;
 		}
 
 		h3 {
-			font-size: 2rem;
-			margin-right: 50px;
+			font-size: 1rem;
 		}
 	}
 </style>
