@@ -1,10 +1,9 @@
 ---
 import { Image } from 'astro:assets';
 import Logo from '../images/logo.png';
-import Bookmark from '../images/bookmark.svg';
 import Contact from '../images/contact.svg';
 import Location from '../images/location.svg';
-import Instagram from '../images/instagram.svg'
+import Instagram from '../images/instagram.svg';
 ---
 
 <header id='navbar'>
@@ -14,7 +13,6 @@ import Instagram from '../images/instagram.svg'
 		<div class='line'></div>
 		<div class='line'></div>
 	</div>
-	
 </header>
 <nav>
 	<div class='menu'>
@@ -47,8 +45,8 @@ import Instagram from '../images/instagram.svg'
 					>
 				</li>
 				<li>
-					<a href="http://instagram.com">
-						<Image src={Instagram} alt='instagram icon'></Image>
+					<a href='http://instagram.com'>
+						<Image src={Instagram} alt='instagram icon' />
 						@kea_circularlab
 					</a>
 				</li>
@@ -70,6 +68,7 @@ import Instagram from '../images/instagram.svg'
 		overflow-x: hidden;
 		z-index: 1;
 		background-color: var(--orange);
+		transition: ease-out 0.75s;
 	}
 
 	.menuIcon {
@@ -78,10 +77,7 @@ import Instagram from '../images/instagram.svg'
 		gap: 3px;
 		margin-right: 30px;
 		cursor: pointer;
-
 	}
-
-	
 
 	.line {
 		background-color: var(--white);
@@ -167,7 +163,6 @@ import Instagram from '../images/instagram.svg'
 	.contact h3 {
 		font-family: HelveticaRoman;
 		text-transform: uppercase;
-
 	}
 
 	.contact li {
@@ -181,3 +176,38 @@ import Instagram from '../images/instagram.svg'
 		margin-right: 5px;
 	}
 </style>
+
+<script>
+	document.addEventListener('astro:page-load', () => {
+		const menuIcon = document.querySelector('.menuIcon');
+		const menuOverlay = document.querySelector('.menu');
+		const bod = document.querySelector('body');
+
+		menuIcon.addEventListener('click', () => {
+			menuOverlay.classList.toggle('active');
+			bod.classList.toggle('no_scroll');
+			console.log('click');
+		});
+	});
+</script>
+
+<script>
+	// EVENTLISTENERS
+	document.addEventListener('astro:page-load', () => {
+		let pastScrollPosition = 0;
+		window.addEventListener('scroll', () => {
+			const navbar = document.querySelector('header');
+			console.log('script started');
+			let currentScrollPosition = scrollY;
+			if (
+				currentScrollPosition > pastScrollPosition &&
+				currentScrollPosition > 130
+			) {
+				navbar.style.top = '-100px';
+			} else {
+				navbar.style.top = '0';
+			}
+			return (pastScrollPosition = scrollY);
+		});
+	});
+</script>
