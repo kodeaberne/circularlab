@@ -1,24 +1,30 @@
 ---
 import { Image } from 'astro:assets';
-import about from '../images/about.svg';
-import contact from '../images/contact.svg';
-import info from '../images/info.svg';
+import map from '../images/map.png'
+import profile from '../images/profile.png'
+import instagram from '../images/instagram.png'
+import linkedIn from '../images/linkedin.png'
 ---
 
 <footer>
 	<section class='footerTop'>
-		<div class='footerContent about'>
-			<h3>Om os</h3>
-			<Image src={about} alt='about icon' />
-		</div>
-		<div class='footerContent contact'>
+		<div class='contact'>
 			<h3>Kontakt</h3>
-			<Image src={contact} alt='contact icon' />
+			<div class='container'>
+				<Image src={profile} alt='contact icon'></Image>
+				<div>
+					<p>Nikolaj S. H. Tost</p>
+					<a href="mailto:nito@kea.dk">Nito@kea.dk</a>
+					<a href="mailto:circular@kea.dk">Circular@kea.dk</a>
+				</div>
+			</div>
 		</div>
-		<div class='footerContent info'>
-			<h3>Praktisk info</h3>
-			<Image src={info} alt='info icon' />
+		<div class='some'>
+			<h3>Sociale Medier</h3>
+			<div><Image src={instagram} alt='instagram icon'></Image><a href="http://instagram.com">Instagram</a></div>
+			<div><Image src={linkedIn} alt='linked in icon'></Image><a href="http://linkedin.com">LinkedIn</a></div>
 		</div>
+		<Image src={map} alt='map image' id=map></Image>
 	</section>
 	<section class='footerBottom'>
 		<p>Guldbergsgade 29N, Lokale A129. Mandag-fredag: 08:30 - 22:00</p>
@@ -31,16 +37,76 @@ import info from '../images/info.svg';
 		width: 100%;
 		display: flex;
 		flex-direction: column;
+		justify-content: start;
 		border-top: 1px solid var(--darkgrey);
+		bottom: 0;
+	}
+
+	a {
+		color: var(--black);
+		text-decoration: none;
+		font-family: "HelveticaRoman";
 	}
 
 	.footerTop {
-		height: 75%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		width: 100%;
+		gap: 1rem;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+		letter-spacing: 0.25rem;
+	}
+
+	.contact {
+		display: flex;
+		flex-direction: column;
+		width: 75%;
+		text-transform: uppercase;
+		justify-self: center;
+	}
+
+	.some {
+		display: flex;
+		width: 80%;
+		flex-direction: column;
+		text-transform: uppercase;
+		justify-self: center;
+		align-items: center;
+	}
+
+	.some img {
+		width: 2rem;
+		height: auto;
+		margin-right: 2rem;
+		transform: translateY(0.5rem);
+	}
+
+	.some div {
+		width: 60%;
+	}
+	.container {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
-        padding-top: 40px;
-		padding-bottom: 40px;
+	}
+
+	.container div {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.container img {
+		width: 25%;
+		height: auto;
+	}
+
+	#map {
+		width: 80%;
+		height: auto;
+		margin-top: 1rem;
 	}
 
 	.footerContent {
@@ -52,15 +118,16 @@ import info from '../images/info.svg';
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
-		background-color: var(--green);
+		background-color: var(--orange);
 		height: 25%;
 	}
 
 	h3 {
 		font-family: 'HelveticaBold';
+		text-align: center;
 	}
 	.footerBottom p {
-		color: var(--white);
+		color: var(--black);
 		font-family: DMMono;
 		font-size: 0.65rem;
 	}
@@ -71,8 +138,10 @@ import info from '../images/info.svg';
 		}
 
         .footerTop {
-            padding-left: 25%;
-            padding-right: 25%;
+            display: flex;
+			flex-direction: row-reverse;
+			width: 80%;
+			margin: auto;
         }
 		.footerBottom p {
 			font-size: 1rem;
