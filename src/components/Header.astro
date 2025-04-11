@@ -8,13 +8,13 @@ import Instagram from '../images/instagram.svg'
 ---
 
 <header id='navbar'>
+	<Image src={Logo} alt='Logo' class='logo' />
 	<div class='menuIcon'>
 		<div class='line'></div>
 		<div class='line'></div>
 		<div class='line'></div>
 	</div>
-	<Image src={Logo} alt='Logo' class='logo' />
-	<Image src={Bookmark} alt='My events icon' class='bookmarkIcon' />
+	
 </header>
 <nav>
 	<div class='menu'>
@@ -69,19 +69,17 @@ import Instagram from '../images/instagram.svg'
 		width: 100vw;
 		overflow-x: hidden;
 		z-index: 1;
-		background-color: var(--green);
+		background-color: var(--orange);
 	}
 
 	.menuIcon {
 		display: flex;
 		flex-direction: column;
 		gap: 3px;
-		margin-left: 30px;
+		margin-right: 30px;
 	}
 
-	.line:nth-child(2) {
-		width: 30px;
-	}
+	
 
 	.line {
 		background-color: var(--white);
@@ -93,6 +91,7 @@ import Instagram from '../images/instagram.svg'
 	.logo {
 		width: 150px;
 		height: auto;
+		margin: auto;
 	}
 
 	.bookmarkIcon {
