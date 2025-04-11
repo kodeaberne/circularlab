@@ -1,14 +1,14 @@
 *:root {
-    --green: #536447;
-    --black: #000000;
-    --white: #FFFFFF;
-    --orange: #FF671F;
-    --grey: #9F9F9F;
-    --blue: #013B5C;
-    --darkgrey: #333333;
-    --lightgrey: #1e1e1e29;
-    --lightestgrey: #F8F8F8;
+  --green: #56c271;
+  --black: #000000;
+  --white: #ffffff;
+  --orange: #ff671f;
+  --grey: #9f9f9f;
+  --blue: #013b5c;
+  --darkgrey: #333333;
+  --lightgrey: #1e1e1e29;
+  --lightestgrey: #f8f8f8;
 
-    --fg: var(--darkgrey);
-    --fg-alt: var(--orange)
+  --fg: var(--darkgrey);
+  --fg-alt: var(--orange);
 }
