@@ -1,0 +1,80 @@
+---
+import placeHolder from "../images/index-24.jpg";
+import pictureHorsie from "../images/DSCF1314.jpg";
+import pictureNatur from "../images/4-natur.png";
+import { Image } from "astro:assets";
+---
+
+<section class="grid_1-1">
+  <div class="text_container">
+    <h1>Ansvar</h1>
+    <p>
+      Ved at omdefinere vores traditionelle “tag, brug, smid ud”-model til en
+      tilgang, der prioriterer reparabilitet, opgradering og genanvendelse,
+      tager vi aktivt ansvar for at reducere spild og minimere vores indvirkning
+      på miljøet.
+    </p>
+    <p>
+      Denne omstilling understøtter ikke blot en reduktion i CO₂-aftryk ved at
+      mindske den energikrævende produktion af nye materialer, men skaber også
+      betingelser for en mere ansvarlig forvaltning af naturressourcer, som er
+      afgørende for at bevare dyre- og plantearter samt økosystemernes
+      integritet.
+    </p>
+    <p>
+      Gennem vidensdeling, praktisk anvendelse og tværfagligt samarbejde
+      bidrager vi til en økonomisk model, der ikke blot reducerer affald og
+      ressourceforbrug, men også skaber et fundament for en resilient og etisk
+      orienteret industri, som tager hensyn til både klimaforhold og
+      dyrevelfærd.
+    </p>
+  </div>
+  <Image src={placeHolder} alt="decoration" class="video" />
+</section>
+<hr />
+<section class="grid_1-1">
+  <Image src={pictureHorsie} alt="decoration" />
+
+  <Image src={pictureNatur} alt="decoration" />
+</section>
+<style>
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .text_container {
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
+  img {
+    width: 90vw;
+    height: 30rem;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    object-fit: cover;
+    align-self: stretch;
+  }
+
+  @media (min-width: 800px) {
+    .grid_1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+    }
+    img {
+      width: 40vw;
+      height: 40rem;
+      margin-left: 5vw;
+      margin-right: 5vw;
+      object-fit: cover;
+      align-self: stretch;
+    }
+
+    .text_container {
+      margin-left: 5vw;
+      margin-right: 5vw;
+    }
+  }
+</style>
