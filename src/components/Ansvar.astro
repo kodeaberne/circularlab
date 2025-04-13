@@ -1,6 +1,6 @@
 ---
 import placeHolder from "../images/index-24.jpg";
-import pictureHorsie from "../images/DSCF1314.jpg";
+import pictureHorsie from "../images/ansvar1.png";
 import pictureNatur from "../images/4-natur.png";
 import { Image } from "astro:assets";
 ---
@@ -31,26 +31,53 @@ import { Image } from "astro:assets";
   </div>
   <Image src={placeHolder} alt="decoration" class="video" />
 </section>
-<hr />
-<section class="grid_1-1">
+<section class="imgContainer">
   <Image src={pictureHorsie} alt="decoration" />
 
   <Image src={pictureNatur} alt="decoration" />
 </section>
 <style>
+
+  section {
+    width: 90%;
+    margin: auto;
+    border-bottom: 1px solid var(--lightgrey);
+    padding-bottom: 4rem;
+  }
   h1 {
     text-align: center;
     text-transform: uppercase;
   }
-  .text_container {
-    margin-left: 10vw;
-    margin-right: 10vw;
-  }
+
   img {
-    width: 90vw;
-    height: 30rem;
-    margin-left: 5vw;
-    margin-right: 5vw;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    align-self: stretch;
+  }
+
+  p {
+    text-align: justify;
+    hyphens: auto;
+    text-wrap: pretty;
+    line-height: 150%;
+  }
+
+  img .video {
+    aspect-ratio: 2 / 3;
+  }
+
+  .imgContainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 4rem;
+    gap: 2rem;
+  }
+
+  img .imgContainer {
+    width: 100%;
+    height: 50%;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
     align-self: stretch;
   }
@@ -62,19 +89,17 @@ import { Image } from "astro:assets";
       justify-content: center;
       align-items: center;
       align-content: center;
+      grid-gap: 2rem;
     }
     img {
-      width: 40vw;
-      height: 40rem;
-      margin-left: 5vw;
-      margin-right: 5vw;
       object-fit: cover;
       align-self: stretch;
     }
 
-    .text_container {
-      margin-left: 5vw;
-      margin-right: 5vw;
+    .imgContainer {
+      flex-direction: row;
     }
+
+
   }
 </style>

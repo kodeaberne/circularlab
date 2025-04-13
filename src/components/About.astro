@@ -1,80 +1,91 @@
 ---
-import materialOne from "../images/index-24.jpg";
-import materialTwo from "../images/3-blomst genering.png";
-import { Image } from "astro:assets";
-import Button from "./Button.astro";
+import materialOne from '../images/index-24.jpg';
+import materialTwo from '../images/3-blomst genering.png';
+import { Image } from 'astro:assets';
+import Button from './Button.astro';
 ---
 
-<div class="grid_1-1">
-  <div class="text_container">
-    <h1>Circular Lab</h1>
-    <p>
-      Circular Lab er et community lab med fokus på cirkulære
-      forretningsmodeller, strategier og design. Circular Lab er for KEAs
-      studerende, undervisere og medlemmer af samarbejdende institutioner.
-      Circular Lab samarbejder på tværs af de andre labs på KEA.
-    </p>
-    <p>
-      Circular Lab er et multifunktionelt rum, der indbyder til at udforske og
-      undersøge nye cirkulære forretningsmodeller og hvordan vi designer
-      cirkulære produkter. Gennem workshops, foredrag, community caféer og
-      virksomhedsbesøg åbner vi op for mulighederne der følger med den cirkulære
-      omstilling og hvordan man kan udforske dem igennem praksis og teori.
-    </p>
-    <Button text="Se begivenheder" />
+<div class='grid_1-1'>
+	<div class='text_container'>
+		<h1>Circular Lab</h1>
+		<p>
+			Circular Lab er et community lab med fokus på cirkulære
+			forretningsmodeller, strategier og design. Circular Lab er for KEAs
+			studerende, undervisere og medlemmer af samarbejdende institutioner.
+			Circular Lab samarbejder på tværs af de andre labs på KEA.
+		</p>
+		<p>
+			Circular Lab er et multifunktionelt rum, der indbyder til at
+			udforske og undersøge nye cirkulære forretningsmodeller og hvordan
+			vi designer cirkulære produkter. Gennem workshops, foredrag,
+			community caféer og virksomhedsbesøg åbner vi op for mulighederne
+			der følger med den cirkulære omstilling og hvordan man kan udforske
+			dem igennem praksis og teori.
+		</p>
+		<Button text='Se begivenheder' />
 
-    <!-- button component -->
-  </div>
-  <div class="img_container">
-    <Image src={materialTwo} alt="material" />
-    <Image src={materialOne} alt="material" />
-  </div>
+		<!-- button component -->
+	</div>
+	<div class='img_container'>
+		<Image src={materialTwo} alt='material' />
+		<Image src={materialOne} alt='material' />
+	</div>
 </div>
 <style>
-  .text_container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 10vw;
-    margin-right: 10vw;
-  }
-  .img_container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-  }
-  img {
-    width: 80%;
-    height: auto;
-    margin: 10px;
-  }
-  h1 {
-    font-family: "HelveticaBold";
-    text-transform: uppercase;
-    text-align: center;
-    word-wrap: break-word;
-  }
+	.text_container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 90%;
+		margin: auto;
+		margin-bottom: 2rem;
+	}
+	.img_container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+		gap: 2rem;
+	}
+	img {
+		width: 90%;
+		margin: auto;
+		height: auto;
+    object-fit: cover;
 
-  p {
-    font-family: "HelveticaRoman";
-    padding-bottom: 10px;
-  }
+	}
+	h1 {
+		font-family: 'HelveticaBold';
+		text-transform: uppercase;
+		text-align: center;
+		word-wrap: break-word;
+	}
 
-  @media (min-width: 800px) {
-    .grid_1-1 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-    .text_container {
-      grid-column: 2 / span 1;
-      grid-row: 1 / span 1;
-      margin: 5vh;
-    }
-    .img_container {
-      grid-column: 1 / span 1;
-      grid-row: 1 / span 1;
-    }
-  }
+	p {
+		font-family: 'HelveticaRoman';
+		padding-bottom: 10px;
+		line-height: 150%;
+		text-align: justify;
+		text-wrap: pretty;
+		hyphens: auto;
+	}
+
+	@media (min-width: 800px) {
+		.grid_1-1 {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			margin-top: 4rem;
+		}
+		.text_container {
+			grid-column: 2 / span 1;
+			grid-row: 1 / span 1;
+			margin: 2rem;
+		}
+		.img_container {
+			grid-column: 1 / span 1;
+			grid-row: 1 / span 1;
+		}
+	}
 </style>
