@@ -1,0 +1,108 @@
+---
+import { Image } from 'astro:assets';
+
+import someLogo from '../images/some.png'
+
+import i1 from '../images/insta/i1.png';
+import i2 from '../images/insta/i2.png';
+import i3 from '../images/insta/i3.png';
+import i4 from '../images/insta/i4.png';
+import i5 from '../images/insta/i5.png';
+import i6 from '../images/insta/i6.jpg';
+import i7 from '../images/insta/i7.png';
+import i8 from '../images/insta/i8.png';
+import i9 from '../images/insta/i9.png';
+
+const instaAlt = 'instagram image';
+---
+
+<section>
+	<div class='instaHeader'>
+        <div class='headerContainer'>
+            <Image src={someLogo} alt='circle lab logo'></Image>
+            <div class='instaText'>
+                <h3>kea_circularlab</h3>
+                <p>20 indlæg</p>
+            </div>
+        </div>
+        <div class='instaButton'>Følg</div>
+    </div>
+	<div class='grid'>
+		<Image src={i1} alt={instaAlt} />
+		<Image src={i2} alt={instaAlt} />
+		<Image src={i3} alt={instaAlt} />
+		<Image src={i4} alt={instaAlt} />
+		<Image src={i5} alt={instaAlt} />
+		<Image src={i6} alt={instaAlt} />
+		<Image src={i7} alt={instaAlt} />
+		<Image src={i8} alt={instaAlt} />
+		<Image src={i9} alt={instaAlt} />
+	</div>
+</section>
+
+<style>
+
+    section {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 4rem;
+    }
+
+    .instaHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        height: 4rem;
+        margin: auto;
+        margin-bottom: 2rem;
+    }
+
+    .instaHeader img {
+        height: 100%;
+        width: auto;
+    }
+
+    .headerContainer {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        gap: 1rem;
+        justify-content: center;
+    } 
+    .instaText {
+        display: flex;
+        flex-direction: column;
+        font-family: 'HelveticaRoman';
+    }
+
+    .instaText p {
+        transform: translateY(-2rem);
+        color: var(--grey);
+        font-family: 'HelveticaRoman';
+    }
+    .instaButton {
+        border-radius: 10px;
+        background: #3B95EF;
+        padding: 1rem 2rem;
+        color: var(--white);
+        cursor: pointer;
+    }
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+        grid-gap: 4px;
+		width: 90%;
+        margin: auto;
+	}
+
+	.grid img {
+		object-fit: cover;
+		align-items: stretch;
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1 / 1;
+	}
+
+</style>
