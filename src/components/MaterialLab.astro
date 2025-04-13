@@ -1,0 +1,86 @@
+---
+import { Image } from 'astro:assets';
+
+import mlab1 from '../images/mlab1.png'
+import mlab2 from '../images/mlab2.png'
+
+const mlab1Alt = 'image of cloting'
+const mlab2Alt = 'image of flower'
+---
+
+<section>
+    <div class='container'>
+        <h1>Material Lab</h1>
+        <p>
+            I Cirkular Material Lab, er der plads og rum for at udforske,
+            eksperimentere og arbejde med materialer i alle afskygninger. Vi har
+            fokus på bæredygtighed og cirkulær økonomi og arbejder med materialerne
+            med dette for øje. Det er alt fra tang, bioplastik og bakterier, til
+            hvordan man forlænger levetiden på eksisterende materialer i produkter,
+            såsom oliebaseret plastik, tekstiler og papir og meget mere.
+        </p>
+        
+        <p>
+            Material ConneXion er et materialebibliotek, hvor du får den nyeste viden
+            indenfor materialer med 500 fysiske prøver og en tilhørende database, som
+            består af 10.000+ materialeprøver indenfor kategorierne polymers, naturals,
+            metals, glass, process, ceramics, cement-based og carbon-based. Det er udvalgte
+            prøver som er innovative, bæredygtige og kommercielt tilgængelige materialer.
+        </p>
+    </div>
+    <div class='imageContainer'>
+        <Image src={mlab1} alt={mlab1Alt}></Image>
+        <Image src={mlab2} alt={mlab2Alt}></Image>
+    </div>
+</section>
+
+<style>
+    section {
+        width: 90%;
+        margin: auto;
+        border-top: 1px solid var(--lightgrey);
+    }
+
+    section p {
+        text-wrap: pretty;
+        hyphens: auto;
+        line-height: 150%;
+        text-align: justify;
+    }
+    
+    section img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        align-self: stretch;
+        margin-bottom: 2rem;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    @media (min-width: 800px) {
+        section {
+            display: flex;
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            padding: 2rem;
+            align-self: start;       
+        }
+
+        .imageContainer {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+        }
+    }
+</style>
