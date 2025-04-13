@@ -1,51 +1,50 @@
 ---
-import blomst from "../images/index-02.jpg";
-import { Image } from "astro:assets";
+import blomst from '../images/index-02.jpg';
+import { Image } from 'astro:assets';
 ---
 
 <section>
-  <div class="text_container">
-    <h3>
-      “We believe our future needs to work together with nature not against it.”
-      <br />
-      <br />
-      -Louise Nash
-      <br />
-      Founder Of Circularity
-    </h3>
-  </div>
-  <div class="img_container">
-    <Image src={blomst} alt="material" />
-  </div>
+	<div class='text_container'>
+		<h3>
+			“We believe our future needs to work together with nature not
+			against it.”
+			<br />
+			<br />
+			-Louise Nash
+			<br />
+			Founder Of Circularity
+		</h3>
+	</div>
 </section>
 
 <style>
-  section {
-    position: relative;
-    text-align: center;
-    color: white;
-    z-index: 100;
-  }
-  .text_container {
-    position: absolute;
-    z-index: 101;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  section h3 {
-    color: var(--white);
-    font-style: italic;
-    font-family: "HelveticaRoman";
-  }
+	section {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		place-content: center;
+		text-align: center;
+		color: white;
+		height: 12rem;
+    margin-bottom: 4rem;
+	}
 
-  .img_container {
-    width: 100%;
-    height: 40vh;
-    overflow: hidden;
-  }
-  img {
-    position: relative;
-    top: -10px;
-  }
+	section:before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: url('/index-02.jpg') lightgray -86.033px -3.216px / 124.684%
+			500.874% no-repeat;
+    filter: sepia(40%);
+	}
+
+	.text_container {
+		position: relative;
+	}
+	section h3 {
+		color: var(--white);
+		font-style: italic;
+		font-family: 'HelveticaRoman';
+	}
 </style>

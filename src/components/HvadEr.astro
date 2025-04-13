@@ -1,5 +1,6 @@
 ---
 import placeHolder from "../images/4-natur.png";
+import circle from '../images/vector.svg'
 import { Image } from "astro:assets";
 ---
 
@@ -25,7 +26,7 @@ import { Image } from "astro:assets";
       </p>
     </div>
     <div class="img">
-      <Image src={placeHolder} alt="decoration" />
+      <Image src={circle} alt="decoration" />
     </div>
     <div class="textbox2 text">
       <p>
@@ -56,18 +57,25 @@ import { Image } from "astro:assets";
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 10vw;
-    margin-right: 10vw;
+    line-height: 150%;
+    text-align: justify;
+    text-wrap: pretty;
+    hyphens: auto;
   }
   .img {
     display: flex;
     justify-content: center;
     align-items: center;
     align-content: center;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
   }
   section {
-    margin-top: 10vh;
-    margin-bottom: 10vh;
+    width: 90%;
+    margin: auto;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    border-top: 1px solid var(--lightgrey);
   }
 
   @media (min-width: 800px) {
