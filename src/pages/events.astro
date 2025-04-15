@@ -34,7 +34,7 @@ const options = {
     <section>
         {
 			eventlist.map((event) => (
-				<Card eventTitle={event.title} eventImage='/repair.png' eventLink={event.id} eventDate=`${new Date(event.eventdate).toLocaleDateString(
+				<Card eventTitle={event.title} eventImage={event.imglink} eventLink={event.id} eventDate=`${new Date(event.eventdate).toLocaleDateString(
                             'da-DA',
 							options
 						)}`>
