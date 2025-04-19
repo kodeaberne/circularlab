@@ -22,8 +22,8 @@ import Instagram from '../images/instagram.svg';
 			<li>
 				<a href='index.html'>Forside</a>
 			</li>
-			<li><a href='events'>Events</a></li>
-			<li><a href='index.html#about'>Om Circular Lab</a></li>
+			<li><a href='events'>Begivenheder</a></li>
+			<li><a href='index.html#about' class='hash'>Om Circular Lab</a></li>
 		</ul>
 
 		<div class='contact'>
@@ -47,7 +47,7 @@ import Instagram from '../images/instagram.svg';
 					>
 				</li>
 				<li>
-					<a href='http://instagram.com'>
+					<a href='https://www.instagram.com/kea_circularlab/'>
 						<Image src={Instagram} alt='instagram icon' />
 						@kea_circularlab
 					</a>
@@ -135,6 +135,8 @@ import Instagram from '../images/instagram.svg';
 		text-transform: uppercase;
 		letter-spacing: 5px;
 		margin: 5vh 0 5vh 0;
+		position: relative;
+		z-index: 101;
 	}
 
 	.menu a {
@@ -160,6 +162,7 @@ import Instagram from '../images/instagram.svg';
 		justify-content: start;
 		align-items: start;
 		margin-top: -100px;
+		z-index: 100;
 	}
 
 	.contact h3 {
@@ -190,6 +193,12 @@ import Instagram from '../images/instagram.svg';
 			bod.classList.toggle('no_scroll');
 			console.log('click');
 		});
+
+    const hash = document.querySelector('.hash');
+
+	hash?.addEventListener('click', () => {
+    menuOverlay?.classList.toggle('active')
+	});
 	});
 </script>
 
