@@ -1,36 +1,39 @@
 @font-face {
-    font-family: DMMono;
-    src: url("../fonts/DMMono-Regular.ttf");
+  font-family: DMMono;
+  src: url("../fonts/DMMono-Regular.ttf");
+  font-display: swap;
 }
 
 @font-face {
-    font-family: HelveticaBold;
-    src: url("../fonts/HelveticaNeueBold.otf");
+  font-family: HelveticaBold;
+  src: url("../fonts/HelveticaNeueBold.otf");
+  font-display: swap;
 }
 
 @font-face {
-    font-family: HelveticaRoman;
-    src: url("../fonts/HelveticaNeueRoman.otf");
+  font-family: HelveticaRoman;
+  src: url("../fonts/HelveticaNeueRoman.otf");
+  font-display: swap;
 }
 
 h1 {
-    font-family: "HelveticaBold";
-    font-size: 4rem;
+  font-family: "HelveticaBold";
+  font-size: 4rem;
 }
 
 h2 {
-    font-family: "HelveticaBold";
-    font-size: 3rem;
+  font-family: "HelveticaBold";
+  font-size: 3rem;
 }
 
 h3 {
-    font-family: "HeveticaBold";
-    font-size: 1.1rem;
+  font-family: "HeveticaBold";
+  font-size: 1.1rem;
 }
 
 p {
-    font-family: "HelveticaRoman";
-    font-size: 1rem;
-    max-width: 60ch;
-    line-height: 1.5rem;
+  font-family: "HelveticaRoman";
+  font-size: 1rem;
+  max-width: 60ch;
+  line-height: 1.5rem;
 }
