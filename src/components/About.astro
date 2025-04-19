@@ -7,7 +7,7 @@ import Button from "./Button.astro";
 
 <div class="grid_1-1" id="about">
   <div class="text_container">
-    <h1>Circular Lab</h1>
+    <h2>Circular Lab</h2>
     <p>
       Circular Lab er et community lab med fokus på cirkulære
       forretningsmodeller, strategier og design. Circular Lab er for KEAs
@@ -54,7 +54,7 @@ import Button from "./Button.astro";
     height: auto;
     object-fit: cover;
   }
-  h1 {
+  h2 {
     font-family: "HelveticaBold";
     text-transform: uppercase;
     text-align: center;
@@ -63,11 +63,11 @@ import Button from "./Button.astro";
 
   p {
     font-family: "HelveticaRoman";
-    padding-bottom: 10px;
-    line-height: 150%;
+    padding-bottom: 0.5rem;
     text-align: justify;
     text-wrap: pretty;
     hyphens: auto;
+    max-width: 60ch;
   }
 
   @media (min-width: 800px) {
