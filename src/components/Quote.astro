@@ -1,4 +1,5 @@
 ---
+
 ---
 
 <section>
@@ -24,17 +25,25 @@
 		text-align: center;
 		color: white;
 		height: 12rem;
-    margin-bottom: 4rem;
+		margin-bottom: 4rem;
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
 	}
 
+	@media only screen and (max-device-width: 800px) {
+		section:before {
+			background-attachment: scroll;
+		}
+	}
 	section:before {
 		content: '';
 		position: absolute;
 		width: 100%;
 		height: 100%;
-		background: url('/index-02.webp') lightgray -86.033px -3.216px / 124.684%
-			500.874% no-repeat;
-    filter: sepia(40%);
+		background: url('../images/hero/bg.webp') 50% / cover
+			no-repeat;
+		background-attachment: fixed;
 	}
 
 	.text_container {

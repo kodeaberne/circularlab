@@ -49,10 +49,6 @@ const options = {
 </BaseLayout>
 
 <style>
-
-    body {
-        background: url('../images/events_section/bg.webp') 50% / cover no-repeat;
-    }
     section {
         width: 100%;
         margin: auto;
@@ -60,7 +56,9 @@ const options = {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background: url('../images/events_section/bg.webp') 50% / cover no-repeat;
+        background: url('../images/hero/bg.webp') lightgray 50% / cover
+			no-repeat;
+        padding-bottom: 4rem;
     }
     .cardContainer {
         display: flex;
@@ -68,7 +66,7 @@ const options = {
         align-items: flex-start;
         overflow-x: scroll;
         width: 100%;
-        padding-top: 4rem;
+        padding-top: 2rem;
         gap: 1rem;
         margin: auto;
     }
@@ -87,7 +85,7 @@ const options = {
     @media (min-width: 800px) {
 
         section {
-            background: url('../images/events_section/bg.webp') 50% / cover no-repeat;
+            background-attachment: fixed;
 
         }
        .cardContainer {
