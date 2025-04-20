@@ -24,14 +24,13 @@ import c2 from '../images/circular/circular2.webp';
 			designe produkter, der holder længere – og som kan repareres,
 			skilles ad, genbruges eller genopfindes, når de ikke længere bruges.
 		</p>
-		<p>
-			I praksis betyder det fx:
-			<ul>
-				<li>Møbler, der let kan skilles ad og genbruges.</li>
-				<li>Produkter designet med udskiftelige moduler.</li>
-				<li>Brugen af restmaterialer som nye, værdifulde råvarer.</li>
-			</ul>
-		</p>
+		<p id='bug'>I praksis betyder det fx:</p>
+		<ul>
+			<li>Møbler, der let kan skilles ad og genbruges.</li>
+			<li>Produkter designet med udskiftelige moduler.</li>
+			<li>Brugen af restmaterialer som nye, værdifulde råvarer.</li>
+		</ul>
+
 		<p>
 			Tænk på Nike’s Space Hippie-sko, lavet af affald fra produktionen –
 			eller IKEA’s brugt-til-nyt-koncept, hvor gamle møbler får nyt liv.
@@ -109,7 +108,6 @@ import c2 from '../images/circular/circular2.webp';
 		font-family: 'HelveticaRoman';
 		font-size: 1rem;
 		line-height: 150%;
-		
 	}
 
 	ul {
@@ -121,32 +119,35 @@ import c2 from '../images/circular/circular2.webp';
 		line-height: 150%;
 	}
 
-  @media (min-width: 800px) {
-    .mobileIMG {
-      display: none;
-    }
+	@media (min-width: 800px) {
+		.mobileIMG {
+			display: none;
+		}
 
-    .imageSection {
-      display: flex;
-      height: 100%;
-      width: 50%;
-      align-items: center;
-      justify-content: center;
-      padding: 4rem 2rem;
-    }
+		.imageSection {
+			display: flex;
+			height: 100%;
+			width: 50%;
+			align-items: center;
+			justify-content: center;
+			padding: 4rem 2rem;
+		}
 
-    .circularSection {
-      flex-direction: row;
-      justify-content: center;
-    }
+		#bug {
+			text-align: left;
+			align-self: start;
+		}
+		.circularSection {
+			flex-direction: row;
+			justify-content: center;
+		}
 
-    .textSection {
-      width: 50%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-    }
-
-  }
+		.textSection {
+			width: 50%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-start;
+		}
+	}
 </style>
