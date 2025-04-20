@@ -25,48 +25,74 @@ const options = {
 };
 ---
 <BaseLayout title='Cirkular Lab: Begivenheder'>
+    <section>
     <h1>Begivenheder</h1>
     <div class='buttonRow'>
-        <Button text='Foredrag'></Button>
-        <Button text='Workshop'></Button>
-        <Button text='Café'></Button>
+        <Button text='Foredrag' link='#'></Button>
+        <Button text='Workshops' link='#'></Button>
+        <Button text='Caféer' link='#'></Button>
     </div>
-    <section>
-        {
-			eventlist.map((event) => (
-				<Card eventTitle={event.title} eventImage={event.imglink} eventLink={event.id} eventDate=`${new Date(event.eventdate).toLocaleDateString(
-                            'da-DA',
-							options
-						)}`>
-				
-                </Card>
-			))
-		}
+        <div class='cardContainer'>
+
+            {
+                eventlist.map((event) => (
+                    <Card eventTitle={event.title} eventImage={event.imglink} eventLink={event.id} eventDate=`${new Date(event.eventdate).toLocaleDateString(
+                        'da-DA',
+                        options
+                    )}`>
+                    
+                    </Card>
+                ))
+            }
+            </div>
     </section>
 </BaseLayout>
 
 <style>
+
+    body {
+        background: url('../images/events_section/bg.webp') 50% / cover no-repeat;
+    }
     section {
+        width: 100%;
+        margin: auto;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        width: 90vw;
-        padding-left: 5vw;
-        padding-right: 5vw;
+        justify-content: center;
+        background: url('../images/events_section/bg.webp') 50% / cover no-repeat;
+    }
+    .cardContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        overflow-x: scroll;
+        width: 100%;
+        padding-top: 4rem;
+        gap: 1rem;
+        margin: auto;
     }
     h1 {
         text-align: center;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        color: var(--white);
+        padding-top: 2rem;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
     }
 
     .buttonRow {
         display: none;
     }
     @media (min-width: 800px) {
+
         section {
-            width: 98vw;
-            margin-left: 1vw;
-            margin-right: 1vw;
+            background: url('../images/events_section/bg.webp') 50% / cover no-repeat;
+
+        }
+       .cardContainer {
+            width: 80%;
+            margin: auto;
             flex-direction: row;
             flex-wrap: wrap;
             gap: 2rem;
