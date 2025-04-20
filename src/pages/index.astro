@@ -7,9 +7,11 @@ import Ansvar from "../components/Ansvar.astro";
 import HvadEr from "../components/HvadEr.astro";
 import MaterialLab from "../components/MaterialLab.astro";
 import Instagram from "../components/Instagram.astro";
+import Events from "../components/Events.astro";
 ---
 
 <BaseLayout title="Circular Lab">
   <Hero />
   <About />
+  <Events server:defer/>
 </BaseLayout>

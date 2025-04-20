@@ -42,6 +42,7 @@ const { eventLink } = Astro.props;
 		text-transform: uppercase;
 		place-self: start end;
 		letter-spacing: 0.625rem;
+		font-size: 1rem;
 	}
 
 	.card::before {
@@ -66,24 +67,26 @@ const { eventLink } = Astro.props;
 		text-align: right;
 		margin-bottom: 3rem;
 		font-family: 'HelveticaRoman';
-		color: var(--lightgrey);
+		color: var(--white);
 	}
 
 	@media (min-width: 800px) {
 
 		a {
-			height: 30rem;
-			width: 23rem;
+			height: 20rem;
+			width: 15rem;
 
 		}
 		.card {
-			height: 30rem;
-			width: 23rem;
+			height: 20rem;
+			width: 15rem;
 		}
 
 		.card h2 {
-			padding-top: 26rem;
+			padding-top: 15rem;
 			font-size: 1rem;
+			letter-spacing: 0.2rem;
+			line-height: 125%;
 		}
 
 		h3 {

@@ -1,0 +1,110 @@
+---
+import { supabase } from '../lib/supabase';
+import Card from './Card.astro';
+
+const { data, error } = await supabase
+	.from('events')
+	.select('id,title,eventdate,imglink')
+	.order('eventdate', { ascending: true });
+
+if (error) {
+	console.log(error);
+	throw error;
+}
+
+const eventlist = data.map((t) => t);
+
+const options = {
+	year: 'numeric',
+	month: 'numeric',
+	day: 'numeric',
+};
+---
+
+<section class='eventSection'>
+	<div class='sectionTitle'>
+		<h1>Kommende begivenheder</h1>
+		<a href='/events'>Se alle</a>
+	</div>
+    <div class='eventTicker'>
+        {
+			eventlist.map((event) => (
+				<div class='cardContainer'>
+
+                <Card eventTitle={event.title} eventImage={event.imglink} eventLink={event.id} eventDate=`${new Date(event.eventdate).toLocaleDateString(
+                    'da-DA',
+                    options
+                )}`>
+				
+                </Card>
+                </div>
+			))
+		}
+    </div>
+</section>
+
+<style>
+	.eventSection {
+        display: flex;
+        flex-direction: column;
+		background-color: var(--orange);
+		text-transform: uppercase;
+        padding-left: 1rem;
+        overflow-x: hidden;
+	}
+
+	.eventSection h1 {
+		font-size: 2rem;
+		color: var(--white);
+		line-height: 150%;
+	}
+
+	.eventSection a {
+		font-family: 'HelveticaBold';
+		color: var(--white);
+		line-height: 150%;
+		letter-spacing: 4px;
+		text-decoration-line: underline;
+		text-decoration-style: solid;
+		text-decoration-skip-ink: none;
+		text-decoration-thickness: auto;
+		text-underline-offset: auto;
+		text-underline-position: from-font;
+		text-transform: uppercase;
+	}
+
+    .sectionTitle {
+        margin-bottom: 2rem;
+    }
+
+    .eventTicker {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        width: auto;
+        overflow-x: scroll;
+    }
+
+    .cardContainer {
+        width: 90%;
+        flex-shrink: 0;
+    }
+
+
+    @media (min-width: 800px) {
+
+        .eventSection {
+            flex-direction: row;
+            padding-top: 2rem;
+        }
+
+        .sectionTitle {
+            width: 30%;
+            margin-right: 2rem;
+        }
+        .cardContainer {
+            width: unset;
+            height: 24rem;
+        }
+    }
+</style>
