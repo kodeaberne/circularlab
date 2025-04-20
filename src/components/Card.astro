@@ -64,6 +64,7 @@ const { eventLink } = Astro.props;
 	h3 {
 		letter-spacing: 0.25rem;
 		margin-left: auto;
+		margin-right: 2rem;
 		text-align: right;
 		margin-bottom: 3rem;
 		font-family: 'HelveticaRoman';
@@ -72,6 +73,9 @@ const { eventLink } = Astro.props;
 
 	@media (min-width: 800px) {
 
+		h3 {
+			margin-right: unset;
+		}
 		a {
 			height: 20rem;
 			width: 15rem;
