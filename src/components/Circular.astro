@@ -1,0 +1,148 @@
+---
+import { Image } from 'astro:assets';
+import c1 from '../images/circular/circular1.webp';
+import c2 from '../images/circular/circular2.webp';
+---
+
+<section class='circularSection'>
+	<div class='textSection'>
+		<h1>Circulær Økonomi</h1>
+		<Image
+			src={c1}
+			alt='illustration af cirkulær økonomi'
+			class='mobileIMG'
+		/>
+		<p>
+			Som studerende på KEA har du muligheden for at skabe løsninger, der
+			både er smukke og bæredygtige. Cirkulær tænkning handler om at
+			designe produkter, der holder længere – og som kan repareres,
+			skilles ad, genbruges eller genopfindes, når de ikke længere bruges.
+		</p>
+		<p>
+			Som studerende på KEA har du muligheden for at skabe løsninger, der
+			både er smukke og bæredygtige. Cirkulær tænkning handler om at
+			designe produkter, der holder længere – og som kan repareres,
+			skilles ad, genbruges eller genopfindes, når de ikke længere bruges.
+		</p>
+		<p>
+			I praksis betyder det fx:
+			<ul>
+				<li>Møbler, der let kan skilles ad og genbruges.</li>
+				<li>Produkter designet med udskiftelige moduler.</li>
+				<li>Brugen af restmaterialer som nye, værdifulde råvarer.</li>
+			</ul>
+		</p>
+		<p>
+			Tænk på Nike’s Space Hippie-sko, lavet af affald fra produktionen –
+			eller IKEA’s brugt-til-nyt-koncept, hvor gamle møbler får nyt liv.
+			Det er cirkulær økonomi i praksis.
+		</p>
+		<Image
+			src={c2}
+			alt='illustration af Nike hippie sko'
+			class='mobileIMG'
+		/>
+		<p>
+			Det handler ikke kun om bæredygtighed – det er også en kreativ
+			udfordring.
+		</p>
+		<p>
+			Cirkulær tænkning kræver, at du gentænker hele designprocessen: Hvad
+			sker der med dit produkt efter brug? Hvordan kan affald blive en
+			ressource?
+		</p>
+		<p>
+			Ved at designe cirkulært bidrager du til en mere ansvarlig fremtid –
+			og du skaber værdi, der rækker langt ud over selve produktet.
+		</p>
+	</div>
+	<div class='imageSection'>
+		<Image src={c1} alt='illustration af cirkulær økonomi' />
+		<Image src={c2} alt='illustration af Nike hippie sko' />
+	</div>
+</section>
+
+<style>
+	.circularSection {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1rem;
+		align-self: stretch;
+		border-bottom: 1px solid #bdb8b8;
+	}
+
+	.textSection {
+		width: 90%;
+		margin: auto;
+	}
+
+	.imageSection {
+		display: none;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		align-self: stretch;
+		width: 100%;
+		object-fit: cover;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+	}
+
+	h1 {
+		text-transform: uppercase;
+		text-align: center;
+		font-size: 3rem;
+	}
+
+	p {
+		text-align: justify;
+		text-wrap: pretty;
+		hyphens: auto;
+		font-family: 'HelveticaRoman';
+		font-size: 1rem;
+		line-height: 150%;
+	}
+
+	ul {
+		text-align: justify;
+		text-wrap: pretty;
+		hyphens: auto;
+		font-family: 'HelveticaRoman';
+		font-size: 1rem;
+		line-height: 150%;
+	}
+
+  @media (min-width: 800px) {
+    .mobileIMG {
+      display: none;
+    }
+
+    .imageSection {
+      display: flex;
+      height: 100%;
+      width: 50%;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 2rem;
+    }
+
+    .circularSection {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .textSection {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+  }
+</style>
