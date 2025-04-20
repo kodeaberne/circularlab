@@ -1,5 +1,5 @@
 ---
-import '../images/hero/hero.webp';
+import '../images/hero/bg.webp';
 import Button from './Button.astro';
 ---
 
@@ -21,7 +21,7 @@ import Button from './Button.astro';
 		justify-content: space-between;
 		align-items: center;
 		flex-shrink: 0;
-		background: url('../images/hero/hero.webp') lightgray 50% / cover
+		background: url('../images/hero/bg.webp') lightgray 50% / cover
 			no-repeat;
 	}
 
@@ -36,6 +36,7 @@ import Button from './Button.astro';
 		line-height: 115%;
 		text-transform: uppercase;
 		background-color: var(--orange);
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
 	}
 
 	.heroText {
@@ -49,6 +50,7 @@ import Button from './Button.astro';
 		text-wrap: pretty;
 		hyphens: auto;
 		width: 90%;
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
 	}
 
 	@media (min-width: 800px) {
