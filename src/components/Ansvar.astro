@@ -1,104 +1,104 @@
 ---
-import placeHolder from "../images/ansvar/index-24.webp";
-import pictureHorsie from "../images/ansvar/ansvar1.webp";
-import pictureNatur from "../images/ansvar/4-natur.webp";
-import { Image } from "astro:assets";
+
 ---
 
-<section class="grid_1-1">
-  <div class="text_container">
-    <h2>Ansvar</h2>
-    <p>
-      Ved at omdefinere vores traditionelle “tag, brug, smid ud”-model til en
-      tilgang, der prioriterer reparabilitet, opgradering og genanvendelse,
-      tager vi aktivt ansvar for at reducere spild og minimere vores indvirkning
-      på miljøet.
-    </p>
-    <p>
-      Denne omstilling understøtter ikke blot en reduktion i CO₂-aftryk ved at
-      mindske den energikrævende produktion af nye materialer, men skaber også
-      betingelser for en mere ansvarlig forvaltning af naturressourcer, som er
-      afgørende for at bevare dyre- og plantearter samt økosystemernes
-      integritet.
-    </p>
-    <p>
-      Gennem vidensdeling, praktisk anvendelse og tværfagligt samarbejde
-      bidrager vi til en økonomisk model, der ikke blot reducerer affald og
-      ressourceforbrug, men også skaber et fundament for en resilient og etisk
-      orienteret industri, som tager hensyn til både klimaforhold og
-      dyrevelfærd.
-    </p>
-  </div>
-  <Image src={placeHolder} alt="decoration" class="video" />
-</section>
-<section class="imgContainer">
-  <Image src={pictureHorsie} alt="decoration" />
-
-  <Image src={pictureNatur} alt="decoration" />
+<section class='grid_1-1'>
+	<div class='text_container'>
+		<h2>Ansvar</h2>
+		<p>
+			Ved at omdefinere vores traditionelle “tag, brug, smid ud”-model til
+			en tilgang, der prioriterer reparabilitet, opgradering og
+			genanvendelse, tager vi aktivt ansvar for at reducere spild og
+			minimere vores indvirkning på miljøet.
+		</p>
+		<p>
+			Denne omstilling understøtter ikke blot en reduktion i CO₂-aftryk
+			ved at mindske den energikrævende produktion af nye materialer, men
+			skaber også betingelser for en mere ansvarlig forvaltning af
+			naturressourcer, som er afgørende for at bevare dyre- og plantearter
+			samt økosystemernes integritet.
+		</p>
+		<p>
+			Gennem vidensdeling, praktisk anvendelse og tværfagligt samarbejde
+			bidrager vi til en økonomisk model, der ikke blot reducerer affald
+			og ressourceforbrug, men også skaber et fundament for en resilient
+			og etisk orienteret industri, som tager hensyn til både klimaforhold
+			og dyrevelfærd.
+		</p>
+	</div>
+	<iframe
+		class='video'
+		src='https://www.youtube-nocookie.com/embed/NTVJCVGXP28?si=CLTYwD-UyedI7IcP'
+		title='YouTube video player'
+		frameborder='0'
+		allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+		referrerpolicy='strict-origin-when-cross-origin'
+		allowfullscreen></iframe>
 </section>
 <style>
+	section {
+		width: 90%;
+		margin: auto;
+		border-bottom: 1px solid var(--lightgrey);
+		padding-bottom: 4rem;
+	}
+	h2 {
+		text-align: center;
+		text-transform: uppercase;
+	}
 
-  section {
-    width: 90%;
-    margin: auto;
-    border-bottom: 1px solid var(--lightgrey);
-    padding-bottom: 4rem;
-  }
-  h2 {
-    text-align: center;
-    text-transform: uppercase;
-  }
+	.video {
+		width: 100%;
+		aspect-ratio: 16/9;
+		object-fit: cover;
+		align-self: stretch;
+	}
 
-  img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    align-self: stretch;
-  }
+	p {
+		text-align: justify;
+		hyphens: auto;
+		text-wrap: pretty;
+	}
 
-  p {
-    text-align: justify;
-    hyphens: auto;
-    text-wrap: pretty;
-  }
+	img .video {
+		aspect-ratio: 2 / 3;
+	}
 
-  img .video {
-    aspect-ratio: 2 / 3;
-  }
+	.imgContainer {
+		display: flex;
+		flex-direction: column;
+		margin-top: 4rem;
+		gap: 2rem;
+	}
 
-  .imgContainer {
-    display: flex;
-    flex-direction: column;
-    margin-top: 4rem;
-    gap: 2rem;
-  }
+	img .imgContainer {
+		width: 100%;
+		height: 50%;
+		aspect-ratio: 4 / 3;
+		object-fit: cover;
+		align-self: stretch;
+	}
 
-  img .imgContainer {
-    width: 100%;
-    height: 50%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    align-self: stretch;
-  }
+	@media (min-width: 800px) {
+		.grid_1-1 {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			justify-content: center;
+			align-items: center;
+			align-content: center;
+			grid-gap: 2rem;
+			padding-top: 6rem;
+      padding-bottom: 6rem;
+		}
+		.video {
+			aspect-ratio: 16/9;
+			height: 300px;
+			width: auto;
+      margin: auto;
+		}
 
-  @media (min-width: 800px) {
-    .grid_1-1 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
-      grid-gap: 2rem;
-    }
-    img {
-      object-fit: cover;
-      align-self: stretch;
-    }
-
-    .imgContainer {
-      flex-direction: row;
-    }
-
-
-  }
+		.imgContainer {
+			flex-direction: row;
+		}
+	}
 </style>
