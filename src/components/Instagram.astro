@@ -45,8 +45,8 @@ const instaAlt = 'instagram image';
     section {
         display: flex;
         flex-direction: column;
-        margin-bottom: 4rem;
-        margin-top: 4rem;
+        max-width: 1200px;
+        margin: 4rem auto;
     }
 
     .instaHeader {
@@ -110,5 +110,15 @@ const instaAlt = 'instagram image';
         height: 100%;
         aspect-ratio: 1 / 1;
 	}
+
+    @media (min-width: 800px) {
+
+        .instaHeader {
+            width: 50%;
+        }
+        .grid {
+            width: 50%;
+        }
+    }
 
 </style>
