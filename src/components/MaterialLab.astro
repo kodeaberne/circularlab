@@ -36,9 +36,11 @@ const mlab2Alt = 'image of flower'
 
 <style>
     section {
-        width: 90%;
+        width: 100%;
+        max-width: 1200px;
         margin: auto;
-        border-top: 1px solid var(--lightgrey);
+        border-bottom: 1px solid var(--lightgrey);
+        align-items: center;
     }
 
     section p {
@@ -46,6 +48,7 @@ const mlab2Alt = 'image of flower'
         hyphens: auto;
         line-height: 150%;
         text-align: justify;
+        max-width: 60ch;
     }
     
     section img {
@@ -57,7 +60,8 @@ const mlab2Alt = 'image of flower'
     }
 
     .container {
-        margin-bottom: 4rem;
+        width: 90%;
+        margin: auto;
     }
     h2 {
         text-align: center;
@@ -67,8 +71,7 @@ const mlab2Alt = 'image of flower'
     @media (min-width: 800px) {
         section {
             display: flex;
-            padding-top: 4rem;
-            padding-bottom: 4rem;
+            flex-direction: row-reverse;
             justify-content: center;
             align-items: center;
             margin-bottom: 2rem;
@@ -86,6 +89,7 @@ const mlab2Alt = 'image of flower'
             display: flex;
             flex-direction: column;
             width: 50%;
+            padding: 4rem;
         }
     }
 </style>
