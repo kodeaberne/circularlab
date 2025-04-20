@@ -1,30 +1,38 @@
 ---
 import { Image } from 'astro:assets';
-import map from '../images/map.png'
-import profile from '../images/profile.png'
-import instagram from '../images/instagram.png'
-import linkedIn from '../images/linkedin.png'
+import map from '../images/map.png';
+import profile from '../images/profile.png';
+import instagram from '../images/instagram.png';
+import linkedIn from '../images/linkedin.png';
 ---
 
 <footer>
 	<section class='footerTop'>
-		<div class='contact'>
-			<h3>Kontakt</h3>
-			<div class='container'>
-				<Image src={profile} alt='contact icon'></Image>
+		<div class='content'>
+			<div class='contact'>
+				<h3>Kontakt</h3>
+				<div class='container'>
+					<Image src={profile} alt='contact icon' />
+					<div>
+						<p>Nikolaj S. H. Tost</p>
+						<a href='mailto:nito@kea.dk'>Nito@kea.dk</a>
+						<a href='mailto:circular@kea.dk'>Circular@kea.dk</a>
+					</div>
+				</div>
+			</div>
+			<div class='some'>
+				<h3>Sociale Medier</h3>
 				<div>
-					<p>Nikolaj S. H. Tost</p>
-					<a href="mailto:nito@kea.dk">Nito@kea.dk</a>
-					<a href="mailto:circular@kea.dk">Circular@kea.dk</a>
+					<Image src={instagram} alt='instagram icon' /><a
+						href='http://instagram.com'>Instagram</a>
+				</div>
+				<div>
+					<Image src={linkedIn} alt='linked in icon' /><a
+						href='http://linkedin.com'>LinkedIn</a>
 				</div>
 			</div>
 		</div>
-		<div class='some'>
-			<h3>Sociale Medier</h3>
-			<div><Image src={instagram} alt='instagram icon'></Image><a href="http://instagram.com">Instagram</a></div>
-			<div><Image src={linkedIn} alt='linked in icon'></Image><a href="http://linkedin.com">LinkedIn</a></div>
-		</div>
-		<Image src={map} alt='map image' id=map></Image>
+		<Image src={map} alt='map image' id='map' />
 	</section>
 	<section class='footerBottom'>
 		<p>Guldbergsgade 29N, Lokale A129. Mandag-fredag: 08:30 - 22:00</p>
@@ -33,6 +41,7 @@ import linkedIn from '../images/linkedin.png'
 
 <style>
 	footer {
+		margin-top: 4rem;
 		margin-left: auto;
 		margin-right: auto;
 		display: flex;
@@ -46,7 +55,7 @@ import linkedIn from '../images/linkedin.png'
 	a {
 		color: var(--black);
 		text-decoration: none;
-		font-family: "HelveticaRoman";
+		font-family: 'HelveticaRoman';
 	}
 
 	.footerTop {
@@ -56,6 +65,8 @@ import linkedIn from '../images/linkedin.png'
 		justify-content: space-around;
 		align-items: center;
 		width: 100%;
+		max-width: 1200px;
+		margin: auto;
 		gap: 1rem;
 		padding-top: 2rem;
 		padding-bottom: 2rem;
@@ -65,14 +76,14 @@ import linkedIn from '../images/linkedin.png'
 	.contact {
 		display: flex;
 		flex-direction: column;
-		width: 75%;
+		width: 100%;
 		text-transform: uppercase;
 		justify-self: center;
 	}
 
 	.some {
 		display: flex;
-		width: 80%;
+		width: 100%;
 		flex-direction: column;
 		text-transform: uppercase;
 		justify-self: center;
@@ -115,6 +126,7 @@ import linkedIn from '../images/linkedin.png'
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		justify-content: center;
 	}
 	.footerBottom {
 		display: flex;
@@ -135,14 +147,39 @@ import linkedIn from '../images/linkedin.png'
 	}
 
 	@media (min-width: 800px) {
-		
-
-        .footerTop {
-            display: flex;
+		.footerTop {
+			display: flex;
 			flex-direction: row-reverse;
-			width: 80%;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
 			margin: auto;
-        }
+			gap: 4rem;
+		}
+
+		.container img {
+			width: 20%;
+			height: 60%;
+		}
+
+		#map {
+			width: 40%;
+		}
+
+		.content {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			height: 100%;
+			gap: 2rem;
+		}
+
+		.some {
+			align-items: start;
+		}
+		.content h3 {
+			text-align: left;
+		}
 		.footerBottom p {
 			font-size: 1rem;
 		}
