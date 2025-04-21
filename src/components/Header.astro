@@ -1,9 +1,9 @@
 ---
 import { Image } from 'astro:assets';
 import Logo from '../images/logo.png';
-import Contact from '../images/contact.svg';
-import Location from '../images/location.svg';
-import Instagram from '../images/instagram.svg';
+import Contact from '../images/mail.png';
+import Location from '../images/location.png';
+import Instagram from '../images/instagram.png';
 ---
 
 <header id='navbar'>
@@ -137,6 +137,11 @@ import Instagram from '../images/instagram.svg';
 	.menu a {
 		text-decoration: none;
 		color: var(--black);
+	}
+
+	.menu a img {
+		height: 1.5rem;
+		width: auto;
 	}
 
 	.menu a:visited {
