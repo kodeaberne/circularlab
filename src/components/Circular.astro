@@ -2,11 +2,12 @@
 import { Image } from 'astro:assets';
 import c1 from '../images/circular/circular1.webp';
 import c2 from '../images/circular/circular2.webp';
+import c3 from '../images/circular/circular3.webp'
 ---
 
 <section class='circularSection' id='circular'>
 	<div class='textSection'>
-		<h1>Circulær Økonomi</h1>
+		<h1>Hvad betyder circulær økonomi?</h1>
 		<Image
 			src={c1}
 			alt='illustration af cirkulær økonomi'
@@ -17,14 +18,8 @@ import c2 from '../images/circular/circular2.webp';
 			både er smukke og bæredygtige. Cirkulær tænkning handler om at
 			designe produkter, der holder længere – og som kan repareres,
 			skilles ad, genbruges eller genopfindes, når de ikke længere bruges.
-		</p>
-		<p>
-			Som studerende på KEA har du muligheden for at skabe løsninger, der
-			både er smukke og bæredygtige. Cirkulær tænkning handler om at
-			designe produkter, der holder længere – og som kan repareres,
-			skilles ad, genbruges eller genopfindes, når de ikke længere bruges.
-			<br>
-			<br>
+			<br />
+			<br />
 			I praksis betyder det fx:
 		</p>
 		<ul>
@@ -44,22 +39,17 @@ import c2 from '../images/circular/circular2.webp';
 			class='mobileIMG'
 		/>
 		<p>
-			Det handler ikke kun om bæredygtighed – det er også en kreativ
-			udfordring.
-		</p>
-		<p>
 			Cirkulær tænkning kræver, at du gentænker hele designprocessen: Hvad
 			sker der med dit produkt efter brug? Hvordan kan affald blive en
 			ressource?
 		</p>
 		<p>
-			Ved at designe cirkulært bidrager du til en mere ansvarlig fremtid –
+			Ved at designe cirkulært bidrager du til en mere ansvarlig fremtid,
 			og du skaber værdi, der rækker langt ud over selve produktet.
 		</p>
 	</div>
 	<div class='imageSection'>
-		<Image src={c1} alt='illustration af cirkulær økonomi' />
-		<Image src={c2} alt='illustration af Nike hippie sko' />
+		<Image src={c3} alt='illustration af cirkulær økonomi' />
 	</div>
 </section>
 
@@ -72,14 +62,12 @@ import c2 from '../images/circular/circular2.webp';
 		align-self: stretch;
 		max-width: 1200px;
 		margin: auto;
-		padding-top: 4rem;
 		padding-bottom: 4rem;
 	}
 
 	.textSection {
 		width: 90%;
 		margin: auto;
-		max-width: 60ch;
 	}
 
 	.imageSection {
@@ -105,13 +93,12 @@ import c2 from '../images/circular/circular2.webp';
 	}
 
 	p {
-		text-align: justify;
 		text-wrap: pretty;
 		hyphens: auto;
 		font-family: 'HelveticaRoman';
 		font-size: 1rem;
 		line-height: 150%;
-		
+		max-width: 64ch;
 	}
 
 	ul {
@@ -130,14 +117,11 @@ import c2 from '../images/circular/circular2.webp';
 
 		.imageSection {
 			display: flex;
-			height: 100%;
 			width: 50%;
-			max-width: 400px;
+			height: auto;
 			align-items: center;
 			justify-content: center;
-			padding-top: 8rem;
 			margin: auto;
-			gap: 10rem;
 		}
 		.circularSection {
 			flex-direction: row;
