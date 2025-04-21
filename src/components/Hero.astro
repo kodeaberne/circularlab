@@ -5,6 +5,16 @@ import Button from './Button.astro';
 
 <section class='heroContainer'>
 	<h1 class='hero'>Hvad kan du designe af det, andre har kasseret?</h1>
+	<script
+		src='https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs'
+		type='module'></script>
+	<dotlottie-player
+		src='https://lottie.host/1d215529-c38e-4d1e-a82f-a285fc51d527/leYO2c2NkM.lottie'
+		background='transparent'
+		speed='1'
+		style='width: 100px; height: 100px'
+		loop
+		autoplay></dotlottie-player>
 	<p class='heroText'>
 		På vores værksted for designstuderende bliver restmaterialer til
 		råmaterialer for nye idéer.
@@ -24,7 +34,8 @@ import Button from './Button.astro';
 		width: 100vw;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+		justify-content: space-evenly;
+		padding-bottom: 2rem;
 		align-items: center;
 		flex-shrink: 0;
 		background: url('../images/hero/bg.webp') lightgray 50% / cover
@@ -32,6 +43,9 @@ import Button from './Button.astro';
 		background-attachment: fixed;
 	}
 
+	dotlottie-player {
+		margin-top: -2rem;
+	}
 	.hero {
 		color: var(--white);
 		padding: 1rem 0rem;
