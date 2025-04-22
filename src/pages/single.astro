@@ -6,8 +6,6 @@ import "../styles/color.css"
 
 import { Image } from "astro:assets";
 
-import plusIcon from "../images/plus.svg"
-
 export const prerender = false;
 
 const getId = Astro.url.searchParams.get('id');
@@ -46,7 +44,7 @@ const options = {
                     options
                 )}</h3>
                 <div class='calendarButton'>
-                    <Image src={plusIcon} alt='plus icon'></Image>
+                    <Image src="/plus.svg" width='1.25rem' height='1.25rem' alt='plus icon'></Image>
                     <h3>TILFØJ TIL KALENDER</h3>
                 </div>
                 <h3>&quot{event.descheader}&quot</h3>
@@ -140,12 +138,11 @@ const options = {
     @media (min-width: 800px) {
         section {
             flex-direction: row;
-            width: 95vw;
+            width: 100%;
             justify-content: center;
             align-items: center;
             gap: 3rem;
-            margin-right: 2.5vw;
-            margin-left: 2.5vw;
+            margin: auto;
             padding-bottom: 150px;
         }
 
